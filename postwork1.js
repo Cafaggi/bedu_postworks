@@ -1,18 +1,18 @@
 
-function deepEqual(obj1, obj2) {
+function deepEqual(element1, element2) {
 
-    if(obj1 === obj2) return true; // si es el mismo regresa true
+    if(element1 === element2) return true; // si es el mismo regresa true
 
-    if((obj1 !== Object(obj1)) && (obj2 !== Object(obj2))) return obj1 === obj2; // si solo son primitivos
+    if((element1 !== Object(element1)) && (element2 !== Object(element2))) return element1 === element2; // si solo son primitivos
 
-    if(Object.keys(obj1).length !== Object.keys(obj2).length) return false; // si tienen diferentes longitudes no son iguales
+    if(Object.keys(element1).length !== Object.keys(element2).length) return false; // si tienen diferentes longitudes no son iguales
 
     //ahora si si son de la misma lingitud
-    for(let key in obj1)
+    for(let key in element1)
     {
-        if(!(key in obj2)) return false; 
+        if(!(key in element2)) return false; 
         // recusivo a cada elemento por si hay objetos dentro de objetos
-        if(!deepEqual(obj1[key], obj2[key])) return false;
+        if(!deepEqual(element1[key], element2[key])) return false;
     }
 
     return true;
