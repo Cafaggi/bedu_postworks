@@ -35,15 +35,18 @@ console.log('Test 5:', deepEqual(john, { firstName: 'John' })) // false
 // Chunk
 
 function chunk(array, size) {
-    const mainArray ={};
+    const mainArray=[];
     var length = array.length;
     var bins = Math.ceil(length / size);
     var count = 0;
 
     for (let index = 0; index < bins; index++) {
+        mainArray[index]=[]
         for (let column = 0; column < size; column++) {
-            mainArray[index][column] = data[count];
-            count++;
+            if (count<data.length){
+                mainArray[index][column] = data[count];
+                count++;
+            }
         }      
     }          
         return mainArray;
