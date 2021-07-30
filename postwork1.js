@@ -35,21 +35,20 @@ console.log('Test 5:', deepEqual(john, { firstName: 'John' })) // false
 // Chunk
 
 function chunk(array, size) {
-    const mainArray=[];
-    var length = array.length;
-    var bins = Math.ceil(length / size);
-    var count = 0;
+    const mainArray=[]; //Se reserva espacio para el array principal
+    var bins = Math.ceil(array.length / size); //Se calcula el número de arrays secundarios dentro del primario
+    var count = 0; //Se crea un contador para iterar los valores de Data[]
 
-    for (let index = 0; index < bins; index++) {
-        mainArray[index]=[]
-        for (let column = 0; column < size; column++) {
-            if (count<data.length){
-                mainArray[index][column] = data[count];
-                count++;
+    for (let index = 0; index < bins; index++) { //Se itera hasta la cantidad de arrays secundarios necesarios (bins)
+        mainArray[index]=[] //En cada iteracion se crea un array secundario
+        for (let column = 0; column < size; column++) { //Se itera hasta la cantidad de numeros que tendrá cada array secundario (column)
+            if (count<data.length){ // Si se acaban los numeros de data[] (data.length) deja de asignar valores al array secundario
+                mainArray[index][column] = data[count];//asigna el valor de data correspondiente al vector secundario en Index en la posicion column
+                count++; //cambio al siguiente valor de data[]
             }
         }      
     }          
-        return mainArray;
+        return mainArray;//regreso el array principal con cada array secundario dentro de él y sus valores dentro de éstos
     };
   
   const data = [1, 2, 3, 4, 5, 6, 7, 8]
