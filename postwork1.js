@@ -31,3 +31,15 @@ console.log('Test 2:', deepEqual(1, '1')) // false
 console.log('Test 3:', deepEqual(john, john)) // true
 console.log('Test 4:', deepEqual(john, { firstName: 'John', lastName: 'Doe' })) // true
 console.log('Test 5:', deepEqual(john, { firstName: 'John' })) // false
+
+// Chunk
+
+function chunk(array, size) {
+    // Code goes here
+  };
+  
+  const data = [1, 2, 3, 4, 5, 6, 7, 8]
+  
+  console.log('Test 1:', chunk(data, 1)) // [[1], [2], [3], [4], [5], [6], [7], [8]]
+  console.log('Test 2:', chunk(data, 2)) // [[1, 2], [3, 4], [5, 6], [7, 8]]
+  console.log('Test 3:', chunk(data, 3)) // [[1, 2, 3], [4, 5, 6], [7, 8]]
