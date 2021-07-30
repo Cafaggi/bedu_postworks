@@ -1,4 +1,5 @@
 
+//deep equal
 function deepEqual(element1, element2) {
 
     if(element1 === element2) return true; // si es el mismo regresa true
@@ -22,7 +23,6 @@ const john = {
     firstName: 'John',
     lastName: 'Doe'
    }
-
 
    
 
