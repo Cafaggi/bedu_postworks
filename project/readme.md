@@ -7,12 +7,13 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#run-server"> ➤ Run server</a></li>
-    <li><a href="#about-the-project"> ➤ About The Project</a></li>
-    <li><a href="#wireframes"> ➤ Wireframes</a></li>
-  </ol>
+    <li><a href="#run-server"> Run server</a></li>
+    <li><a href="#about-the-project"> About The Project</a></li>
+    <li><a href="#wireframes"> Wireframes</a></li>
+  </ol><br>
 
-<h2 id="run-sever"> :pencil: How to run the server for development</h2>
+<!-- RUN SEVER -->
+<h2 id="run-sever"> :computer:  1. How to run the server for development</h2>
 
 <p align="justify"> 
 to install the dependencies
@@ -36,16 +37,18 @@ the command for a clean instalation of the packages is
 
 ```
 $ npm install --save-dev webpack-dev-server css-loader style-loader html-loader @babel/core @babel/preset-env babel-loader webpack webpack-cli html-webpack-plugin
-```
+``` 
+<br>
+
 <!-- ABOUT THE PROJECT -->
-<h2 id="about-the-project"> :pencil: About The Project</h2>
+<h2 id="about-the-project"> :pencil:  2. About The Project</h2>
 
 <p align="justify"> 
   This is our recipe finder project, developed as a project of the Web Development course at BEDU. The project consists of a web page of recipes extracted from an API, which shows the recipes by means of a search by words or randomly.
-</p>
+</p><br>
   
 <!-- WIREFRAMES -->
-<h2 id="wireframes"> :bulb: Wireframes</h2>
+<h2 id="wireframes"> :bulb: 3. Wireframes</h2>
 
 <p align="justify"> 
   Before starting with the code, we developed the idea and translated it into wireframes and a interactive prototype, from which we obtained the following use cases:
