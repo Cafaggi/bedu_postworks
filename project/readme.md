@@ -7,10 +7,36 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
+    <li><a href="#run-server"> ➤ Run server</a></li>
     <li><a href="#about-the-project"> ➤ About The Project</a></li>
     <li><a href="#wireframes"> ➤ Wireframes</a></li>
   </ol>
-    
+
+<h2 id="run-sever"> :pencil: How to run the server for development</h2>
+
+<p align="justify"> 
+to install the dependencies
+</p>
+
+```
+$ npm install
+```
+
+<p align="justify"> 
+to deploy the server run
+</p>
+
+```
+$ npm run start
+```
+
+<p align="justify"> 
+the command for a clean instalation of the packages is
+</p>
+
+```
+$ npm install --save-dev webpack-dev-server css-loader style-loader html-loader @babel/core @babel/preset-env babel-loader webpack webpack-cli html-webpack-plugin
+```
 <!-- ABOUT THE PROJECT -->
 <h2 id="about-the-project"> :pencil: About The Project</h2>
 
