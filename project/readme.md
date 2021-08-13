@@ -32,6 +32,14 @@ $ npm run start
 ```
 
 <p align="justify"> 
+to transpile the code into dist directory
+</p>
+
+```
+$ npm run build
+```
+
+<p align="justify"> 
 the command for a clean instalation of the packages is
 </p>
 
