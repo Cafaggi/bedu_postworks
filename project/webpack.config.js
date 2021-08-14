@@ -11,6 +11,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'random.html',
+      template: './src/random.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'search.html',
+      template: './src/search.html'
     })
   ],
   module: {
