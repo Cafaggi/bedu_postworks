@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🍪👨🏼‍🍳Cook it! Recipes 👩🏼‍🍳🍪</title>
     <!--Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,400&display=swap"
+        rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -21,8 +22,10 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
         <div class="container-fluid">
+
+            <!-- Brand-logo -->
             <a href="index.html"><img class="nav-brand" src="./assets/logo.png" alt="Logo"></a>
-        
+
             <!-- Hamburger button -->
             <button class="none-focus navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -43,8 +46,9 @@
 
                 <!-- Search input and random button -->
                 <form class="d-flex mx-3">
-                    <input class="search-input me-2 none-focus" type="search" placeholder="🔎  Search" aria-label="Search">
-                    <a href="#" class="btn btn-outline-secondary none-focus" type="submit"><span
+                    <input class="search-input me-2 none-focus" type="search" placeholder="🔎  Search"
+                        aria-label="Search">
+                    <a href="./random.html" class="btn btn-outline-secondary none-focus" type="submit"><span
                             class="bi bi-shuffle"></span></a>
                 </form>
 
@@ -59,19 +63,19 @@
         <input class="search-input-recipe none-focus" type="search" placeholder="🔎   Search for a meal or ingredient"
             aria-label="Search">
         <div class="search-btn-recipe">
-            <button class="btn btn-recipe-search btn-outline-secondary none-focus" type="submit">
+            <button class="btn btn-recipe-search btn-outline-secondary none-focus l-s" type="submit">
                 <span class="bi"><b>SEARCH</b></span>
             </button>
-        </div> 
+        </div>
     </div>
     <section class="pattern"></section>
 
-    <!-- Random recipe -->
+    <!-- Random recipe card-->
     <div class="random-recipe">
         <div class="card text-center random-recipe-card" style="width: 25rem;">
             <div class="card-body">
                 <h3 class="card-title"><b>Random recipe</b></h3><br>
-                <a href="./random.html" class="btn btn-outline-secondary none-focus"><b>
+                <a href="./random.html" class="btn btn-outline-secondary none-focus l-s"><b>
                         <span class="bi bi-shuffle px-5"> <span class="pe-3"></span>RANDOM</span></b></a>
             </div>
         </div>
