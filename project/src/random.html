@@ -53,13 +53,18 @@
             </div>
         </div>
     </nav>
-    
-    <!-- Radom recipe -->
+
+   <!-- Radom recipe -->
+   
+    <p>meal name : <span id = "mealName"></span></p>
+    <p>meal instructions : <span id = "mealInst"></span></p>
+    <img id="mealImg">
+
     <div class="random-recipe">
         <div class="card text-center random-recipe-card" style="width: 25rem;">
             <div class="card-body">
                 <h3 class="card-title"><b>Random recipe</b></h3><br>
-                <a href="#" class="btn btn-outline-secondary none-focus"><b>
+                <a href="./random.html" class="btn btn-outline-secondary none-focus"><b>
                         <span class="bi bi-shuffle px-5"> <span class="pe-3"></span>RANDOM</span></b></a>
             </div>
         </div>
@@ -72,6 +77,25 @@
     </script>
     <!--Custom JavaScript -->
     <script src="./js/index.js"></script>
+
+    <script>
+        const api_url = "https://www.themealdb.com/api/json/v1/1/random.php";
+        
+        async function getRandomMeal(){
+            const response = await fetch(api_url);
+            let data = await response.json()
+            data = data.meals[0];
+
+            const mealName = data.strMeal
+            const mealInst = data.strInstructions
+            const mealImg = data.strMealThumb
+            console.log(mealImg)
+            document.getElementById('mealName').textContent = mealName
+            document.getElementById('mealInst').textContent = mealInst
+            document.getElementById('mealImg').src = mealImg
+        };
+        getRandomMeal();
+    </script>
 
 </body>
 
