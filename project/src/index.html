@@ -61,13 +61,17 @@
     <div class="search-recipe">
         <h1 class="search-title"><b>Search a recipe</b></h1>
         <input class="search-input-recipe none-focus" type="search" placeholder="🔎   Search for a meal or ingredient"
-            aria-label="Search">
+            aria-label="Search" id = "search-input-box">
         <div class="search-btn-recipe">
-            <button class="btn btn-recipe-search btn-outline-secondary none-focus l-s" type="submit">
+            <button class="btn btn-recipe-search btn-outline-secondary none-focus l-s" type="submit" id="search-button">
                 <span class="bi"><b>SEARCH</b></span>
             </button>
         </div>
     </div>
+    
+    <!-- List container for search function-->
+    <div id = "searched-meal" class="searched-meal"></div>
+    
     <section class="pattern"></section>
 
     <!-- Random recipe card-->
