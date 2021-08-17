@@ -27,16 +27,20 @@ function createCard(data) {
   return card;
 }
 
-
-
 var searchButton = document.getElementById("search-button")
 const searchInput = document.getElementById('search-input-box');
 
 searchButton.addEventListener('click', getSearchedMeal);
 
 async function getSearchedMeal() {
+  
+  const card = document.querySelector('#searched')
   const API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
   const search = searchInput.value;
+
+  if(card.childElementCount>0){
+    card.removeChild(document.querySelector('.meal-card'))
+  };
 
   if(search) {
     const formattedSearch = API_URL+String(search);
@@ -44,9 +48,9 @@ async function getSearchedMeal() {
     let data = await response.json()
 
     data = data.meals[0];
-    const card = document.querySelector('#searched-meal')
     card.appendChild(createCard(data))
+    
   }
   
-}
+};
 
