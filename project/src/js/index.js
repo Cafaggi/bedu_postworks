@@ -11,8 +11,8 @@ function createCard(data) {
   name.appendChild(nameText)
 
   const instructions = document.createElement('h6');
-  const instText = document.createTextNode(data.strInstructions);
-  instructions.appendChild(instText)
+  const instTags = document.createTextNode(data.strTags);
+  instructions.appendChild(instTags)
 
   const img = document.createElement('img');
   img.src = data.strMealThumb;
@@ -45,11 +45,14 @@ async function getSearchedMeal() {
   if(search) {
     const formattedSearch = API_URL+String(search);
     const response = await fetch(formattedSearch);
-    let data = await response.json()
+    let data = await response.json();
+    const leng = data.meals.length;
+    let  meal
 
-    data = data.meals[0];
-    card.appendChild(createCard(data))
-    
+    for (let index = 0; index < leng; index++) {
+      meal = data.meals[index];
+      card.appendChild(createCard(meal))
+    };
   }
   
 };
