@@ -110,6 +110,7 @@
             display: flex;
             flex-direction: column;
             padding-left: 2%;
+            
             /* border: 2px solid rgb(134, 3, 134); */
         }
 
@@ -135,6 +136,9 @@
             text-align: center;
             font-size: 30px;
             font-weight: 700;
+        }
+        .ingredients>* {
+            align-self: center;
         }
 
         /* Random recipe card */
@@ -194,23 +198,12 @@
 
             <!-- Navbar/Hamburger button content -->
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4 navbar-content">
-                    <li class="nav-item color-navbar">
-                        <a class="nav-link" href="#">All Recipes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Credits</a>
-                    </li>
-                </ul>
 
                 <!-- Search input and random button -->
                 <form class="d-flex mx-3">
-                    <input class="search-input me-2 none-focus" type="search" placeholder="🔎  Search"
-                        aria-label="Search">
                     <a href="./random.html" class="btn btn-outline-secondary none-focus" type="submit"><span
                             class="bi bi-shuffle"></span></a>
                 </form>
-
             </div>
         </div>
     </nav>
@@ -228,11 +221,13 @@
                     </div>
                 </h6>
             </div>
-            <img id="mealImg" width="500" height="400" style="border-radius: 20px;">
+            <img id="mealImg" width="400" height="300" style="border-radius: 20px;">
         </div>
     </section>
     <section class="ingredients">
         <h1 class="ing-title">Ingredients</h1>
+        <h6 id=ingredients>
+            </h2>
 
     </section>
 
@@ -245,7 +240,7 @@
     <!-- Bootstrap JavaScript -->
     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
-    </script>
+        </script>
     <!--Custom JavaScript -->
     <script src="./js/index.js"></script>
 
@@ -256,13 +251,26 @@
             let data = await response.json()
             data = data.meals[0];
 
+
             const mealName = data.strMeal
             const mealInst = data.strInstructions
             const mealImg = data.strMealThumb
             document.getElementById('mealName').textContent = mealName
             document.getElementById('mealInst').textContent = mealInst
             document.getElementById('mealImg').src = mealImg
+
+            let ings = data.strIngredient1 + " " + data.strIngredient2 + " " + data.strIngredient3 +
+                " " + data.strIngredient4 + " " + data.strIngredient5 + " " + data.strIngredient6 +
+                " " + data.strIngredient7 + " " + data.strIngredient8 + " " + data.strIngredient9 +
+                " " + data.strIngredient10 + " " + data.strIngredient11 + " " + data.strIngredient12 +
+                " " + data.strIngredient13 + " " + data.strIngredient14 + " " + data.strIngredient15 +
+                " " + data.strIngredient16 + " " + data.strIngredient16 + " " + data.strIngredient17 +
+                " " + data.strIngredient18 + " " + data.strIngredient19 + " " + data.strIngredient20
+                
+            document.getElementById('ingredients').textContent = ings
+
         };
+
         getRandomMeal();
     </script>
 
