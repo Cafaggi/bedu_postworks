@@ -17,10 +17,16 @@ function showNotFound(){
   NotFound.style.display="block"
 }
 
-/* Before run test*/
+/* Before run tests and eventhandlers */
 function RunSearch(){
   if(searchInput.value!=""){
     getSearchedMeal()
+  }
+}
+
+function EnterSearch(e){
+  if(e.key == "Enter"){
+    RunSearch()
   }
 }
 
@@ -56,10 +62,11 @@ var searchButton = document.getElementById("search-button")
 const searchInput = document.getElementById('search-input-box');
 
 searchButton.addEventListener('click', RunSearch);
+window.addEventListener('keydown', EnterSearch);
 
 async function getSearchedMeal() {
 
-  const card = document.querySelector('#searched')
+  const card = document.querySelector('#searched');
   const API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
   const search = searchInput.value;
 
@@ -67,23 +74,20 @@ async function getSearchedMeal() {
   hideNotFound()
 
   if(card.childElementCount>0){
-    card.innerHTML=""
+    card.innerHTML="";
   };
 
-  if(search) {
-    const formattedSearch = API_URL+String(search);
-    const response = await fetch(formattedSearch);
-    let data = await response.json();
-    let  meal
-    console.log(card.childElementCount)
+  const formattedSearch = API_URL+String(search);
+  const response = await fetch(formattedSearch);
+  let data = await response.json();
+  let  meal
 
-    if (data.meals != null){
-      const leng = data.meals.length;
-      for (let index = 0; index < leng; index++) {
-        meal = data.meals[index];
-        card.appendChild(createCard(meal))} }
-      else {
-        showNotFound()
-    };
-  }
+  if (data.meals != null){
+    const leng = data.meals.length;
+    for (let index = 0; index < leng; index++) {
+      meal = data.meals[index];
+      card.appendChild(createCard(meal))} }
+    else {
+      showNotFound()
+  };
 };
