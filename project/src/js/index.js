@@ -1,7 +1,6 @@
 import '../css/styles.css';
 import 'regenerator-runtime/runtime';
 
-
 function createCard(data) {
   const card = document.createElement('div');
   card.className = 'meal-card';
@@ -24,6 +23,7 @@ function createCard(data) {
   card.appendChild(img);
   card.appendChild(instructions);
 
+  card.addEventListener("click",()=>window.location=`/random.html?id=${data.idMeal}`);
   return card;
 }
 
@@ -46,6 +46,7 @@ var searchButton = document.getElementById("search-button")
 const searchInput = document.getElementById('search-input-box');
 
 searchButton.addEventListener('click', getSearchedMeal);
+searchButton.addEventListener('click', hideChef);
 
 async function getSearchedMeal() {
 
