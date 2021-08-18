@@ -241,7 +241,7 @@
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
         </script>
     <!--Custom JavaScript -->
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js" type="module"></script>
 
     <script>
         
@@ -291,15 +291,20 @@
             
             let ings=[]
 
-            let i=1;
+            let ings = data.strIngredient1 + " " + data.strIngredient2 + " " + data.strIngredient3 +
+                " " + data.strIngredient4 + " " + data.strIngredient5 + " " + data.strIngredient6 +
+                " " + data.strIngredient7 + " " + data.strIngredient8 + " " + data.strIngredient9 +
+                " " + data.strIngredient10 + " " + data.strIngredient11 + " " + data.strIngredient12 +
+                " " + data.strIngredient13 + " " + data.strIngredient14 + " " + data.strIngredient15 +
+                " " + data.strIngredient16 + " " + data.strIngredient16 + " " + data.strIngredient17 +
+                " " + data.strIngredient18 + " " + data.strIngredient19 + " " + data.strIngredient20
+        
+            document.getElementById('ingredients').textContent = ings
 
-            while(data.strIngredient & i != null){
-                ing = data.strIngredient & i;
-                ings.push(ing);
-                i++;
-            };
+            console.log(data.strIngredients1)
         };
-            
+        
+        
 
         getRandomMeal();
         
