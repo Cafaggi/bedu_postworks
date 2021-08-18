@@ -75,7 +75,6 @@ async function getSearchedMeal() {
     const response = await fetch(formattedSearch);
     let data = await response.json();
     let  meal
-    console.log(card.childElementCount)
 
     if (data.meals != null){
       const leng = data.meals.length;
@@ -85,5 +84,5 @@ async function getSearchedMeal() {
       else {
         showNotFound()
     };
-  }
+  };
 };
