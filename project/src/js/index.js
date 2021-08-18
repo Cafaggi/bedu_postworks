@@ -27,10 +27,19 @@ function createCard(data) {
   return card;
 }
 
+function hideChef (){
+  let img=document.querySelector("#Chef")
+
+  img.style.display="none"
+  
+}
+
 var searchButton = document.getElementById("search-button")
 const searchInput = document.getElementById('search-input-box');
 
 searchButton.addEventListener('click', getSearchedMeal);
+
+searchButton.addEventListener('click', hideChef);
 
 async function getSearchedMeal() {
   
