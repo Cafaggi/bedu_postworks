@@ -55,14 +55,17 @@ async function getSearchedMeal() {
     const formattedSearch = API_URL+String(search);
     const response = await fetch(formattedSearch);
     let data = await response.json();
-    const leng = data.meals.length;
     let  meal
+    console.log(card.childElementCount)
 
-    for (let index = 0; index < leng; index++) {
-      meal = data.meals[index];
-      card.appendChild(createCard(meal))
+    if (data.meals != null){
+      const leng = data.meals.length;
+      for (let index = 0; index < leng; index++) {
+        meal = data.meals[index];
+        card.appendChild(createCard(meal))} }
+      else {
+        console.log('no meals found')
     };
   }
   
 };
-
