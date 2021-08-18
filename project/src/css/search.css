@@ -56,9 +56,9 @@ html {
 /* Search a recipe */
 .search-recipe {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  background: #f4f4f4;
+  background: #9c6262;
 }
 .search-title {
   padding-top: 5%;
