@@ -90,7 +90,6 @@
 
     <script>
         const api_url = "https://www.themealdb.com/api/json/v1/1/random.php";
-
         async function getRandomMeal() {
             const response = await fetch(api_url);
             let data = await response.json()
