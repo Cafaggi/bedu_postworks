@@ -12,10 +12,17 @@
 html {
   background-color: var(--orange-light);
 }
-/* Brand logo */
+/* Nav */
 .nav-brand {
   width: 180px;
 }
+
+.navbar.navbar-expand-lg.navbar-light.bg-light.shadow {
+  position: sticky;
+  top: 0;
+  padding-top: 0;
+}
+
 /* Navbar/Hamburger button content */
 .navbar-content {
   font-weight: 500;

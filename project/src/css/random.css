@@ -95,7 +95,7 @@ html {
 /* Ingredients */
 .ingredients {
   padding: 3% 5%;
-  background: rgb(238, 238, 238);
+  background: var(--orange-light);
 }
 .ing-title {
   text-align: center;
