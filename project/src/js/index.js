@@ -1,6 +1,30 @@
 import '../css/styles.css';
 import 'regenerator-runtime/runtime';
 
+/* Hide and show figures */
+function hideChef(){
+  let img=document.querySelector("#Chef")
+  img.style.display="none"
+}
+
+function hideNotFound(){
+  let NotFound=document.querySelector("#Not-Found")
+  NotFound.style.display="none"
+}
+
+function showNotFound(){
+  let NotFound=document.querySelector("#Not-Found")
+  NotFound.style.display="block"
+}
+
+/* Before run test*/
+function RunSearch(){
+  if(searchInput.value!=""){
+    getSearchedMeal()
+  }
+}
+
+/* Create container of recipes */
 function createCard(data) {
   const card = document.createElement('div');
   card.className = 'meal-card';
@@ -27,26 +51,11 @@ function createCard(data) {
   return card;
 }
 
-function hideChef(){
-  let img=document.querySelector("#Chef")
-  img.style.display="none"
-}
-
-function hideNotFound(){
-  let NotFound=document.querySelector("#Not-Found")
-  NotFound.style.display="none"
-}
-
-function showNotFound(){
-  let NotFound=document.querySelector("#Not-Found")
-  NotFound.style.display="block"
-}
-
+/* Search code */
 var searchButton = document.getElementById("search-button")
 const searchInput = document.getElementById('search-input-box');
 
-searchButton.addEventListener('click', getSearchedMeal);
-searchButton.addEventListener('click', hideChef);
+searchButton.addEventListener('click', RunSearch);
 
 async function getSearchedMeal() {
 
@@ -58,7 +67,7 @@ async function getSearchedMeal() {
   hideNotFound()
 
   if(card.childElementCount>0){
-    card.removeChild(document.querySelector('.meal-card'))
+    card.innerHTML=""
   };
 
   if(search) {
