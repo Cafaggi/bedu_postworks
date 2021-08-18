@@ -38,7 +38,6 @@ var searchButton = document.getElementById("search-button")
 const searchInput = document.getElementById('search-input-box');
 
 searchButton.addEventListener('click', getSearchedMeal);
-
 searchButton.addEventListener('click', hideChef);
 
 async function getSearchedMeal() {
