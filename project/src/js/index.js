@@ -27,11 +27,19 @@ function createCard(data) {
   return card;
 }
 
-function hideChef (){
+function hideChef(){
   let img=document.querySelector("#Chef")
-
   img.style.display="none"
-  
+}
+
+function hideNotFound(){
+  let NotFound=document.querySelector("#Not-Found")
+  NotFound.style.display="none"
+}
+
+function showNotFound(){
+  let NotFound=document.querySelector("#Not-Found")
+  NotFound.style.display="block"
 }
 
 var searchButton = document.getElementById("search-button")
@@ -39,13 +47,14 @@ const searchInput = document.getElementById('search-input-box');
 
 searchButton.addEventListener('click', getSearchedMeal);
 
-searchButton.addEventListener('click', hideChef);
-
 async function getSearchedMeal() {
-  
+
   const card = document.querySelector('#searched')
   const API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
   const search = searchInput.value;
+
+  hideChef()
+  hideNotFound()
 
   if(card.childElementCount>0){
     card.removeChild(document.querySelector('.meal-card'))
@@ -64,8 +73,7 @@ async function getSearchedMeal() {
         meal = data.meals[index];
         card.appendChild(createCard(meal))} }
       else {
-        console.log('no meals found')
+        showNotFound()
     };
   }
-  
 };

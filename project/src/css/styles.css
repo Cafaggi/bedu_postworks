@@ -122,6 +122,15 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.No-results{
+  width: 100%;
+  height: 100px;
+  background-color: transparent;
+  text-align: center;
+  vertical-align: middle;
+}
+
 /* Random recipe card */
 .random-recipe {
   background: var(--orange-light);
