@@ -245,7 +245,6 @@
     <script src="./js/index.js" type="module"></script>
 
     <script>
-        
         function createCardIng(ing) {
             const card = document.createElement('div');
             card.className = 'ing-card';
@@ -270,6 +269,8 @@
             const url=window.location.href;
             const id=url?.split("id=")?.[1];
             let data
+            console.log(url)
+            console.log(id)
 
             if (id) {
                 const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
@@ -290,8 +291,6 @@
             document.getElementById('mealInst').textContent = mealInst
             document.getElementById('mealImg').src = mealImg
             
-            let ings=[]
-
             let ings = data.strIngredient1 + " " + data.strIngredient2 + " " + data.strIngredient3 +
                 " " + data.strIngredient4 + " " + data.strIngredient5 + " " + data.strIngredient6 +
                 " " + data.strIngredient7 + " " + data.strIngredient8 + " " + data.strIngredient9 +
