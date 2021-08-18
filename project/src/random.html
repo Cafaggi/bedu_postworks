@@ -86,7 +86,7 @@
 
         /* Random recipe */
         .random-recipes {
-            background: #ffffff;
+            background: white;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -95,7 +95,8 @@
         }
 
         .mealName {
-            font-size: 400%;
+            font-size: 48px;
+            font-weight: bold;
             margin-bottom: 4%;
             /* border: 2px solid rgb(0, 255, 255); */
         }
@@ -120,7 +121,8 @@
         }
 
         .mealInst {
-            font-size: 20px;
+            font-size: 16px;
+            font-weight: 400;
             padding-right: 5%;
             margin-right: 3%;
             /* border: 2px solid rgb(224, 57, 79); */
@@ -129,7 +131,7 @@
         /* Ingredients */
         .ingredients {
             padding: 3% 5%;
-            background: rgb(238, 238, 238);
+            background: var(--orange-light);
         }
 
         .ing-title {
@@ -143,7 +145,7 @@
 
         /* Random recipe card */
         .random-recipe {
-            background: #ffffff;
+            background: white;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -167,14 +169,20 @@
         /* Footer */
         .footer {
             text-align: center;
-            color: #6e6e6e;
-            background-color: orange;
+            color: var(--orange-light);
+            background-color: var(--orange-dark);
             padding-top: 2%;
             padding-bottom: 2%;
         }
 
         .footer>h1 {
+            font-size: 20px;
             font-weight: 700;
+        }
+
+        .footer span {
+            font-size: 20px;
+            color: var(--orange-light);
         }
     </style>
 
@@ -198,6 +206,7 @@
 
             <!-- Navbar/Hamburger button content -->
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4 navbar-content"></ul>
 
                 <!-- Search input and random button -->
                 <form class="d-flex mx-3">
@@ -233,7 +242,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer">
-            <h1>Lets<span style="color: black;"><b> Cook</span> it!</b></h1>
+            <h1>Lets<span><b> Cook</span> it!</b></h1>
         </div>
     </footer>
     <!-- Bootstrap JavaScript -->
