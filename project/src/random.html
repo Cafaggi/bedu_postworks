@@ -1,182 +1,192 @@
 <!DOCTYPE html>
 <html lang="es-MX" dir="auto">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>🍪👨🏼‍🍳Cook it! Recipes 👩🏼‍🍳🍪</title>
-        <!--Fonts -->
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-        <!-- Bootstrap Icons CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="./css/random.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍪👨🏼‍🍳Cook it! Recipes 👩🏼‍🍳🍪</title>
+    <!--Fonts -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/random.css">
 
-        <style>
-            * {
-                font-family: "Montserrat", sans-serif;
-            }
+    <style>
+        * {
+            font-family: "Montserrat", sans-serif;
+        }
 
-            :root {
-                --orange-light: rgb(255, 241, 204);
-                --orange-dark: rgb(237, 129, 14);
-                --orange-hover: #f45800;
-                --gray-input: rgb(90, 90, 90);
-            }
+        :root {
+            --orange-light: rgb(255, 241, 204);
+            --orange-dark: rgb(237, 129, 14);
+            --orange-hover: #f45800;
+            --gray-input: rgb(90, 90, 90);
+        }
 
-            /* *********** Navbar  *********** */
-            html {
-                background-color: transparent;
-            }
+        /* *********** Navbar  *********** */
+        html {
+            background-color: transparent;
+        }
 
-            /* Brand logo */
-            .nav-brand {
-                width: 180px;
-            }
+        /* Brand logo */
+        .nav-brand {
+            width: 180px;
+        }
 
-            /* Navbar/Hamburger button content */
-            .navbar-content {
-                font-weight: 500;
-            }
+        /* Navbar/Hamburger button content */
+        .navbar-content {
+            font-weight: 500;
+        }
 
-            /* Search */
-            .search-input {
-                display: block;
-                width: 100%;
-                padding: 0.375rem 0.75rem;
-                font-size: 1rem;
-                font-weight: 400;
-                line-height: 1.5;
-                color: rgb(90, 90, 90);
-                background-clip: padding-box;
-                border: 1px solid #ced4da;
-                border-radius: 8px;
-                margin-right: 15px;
-            }
+        /* Search */
+        .search-input {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: rgb(90, 90, 90);
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
 
-            .none-focus:focus {
-                border-color: rgb(156, 156, 156);
-                box-shadow: none !important;
-                outline: none;
-            }
+        .none-focus:focus {
+            border-color: rgb(156, 156, 156);
+            box-shadow: none !important;
+            outline: none;
+        }
 
-            .search-input::placeholder {
-                color: #c0c3c7;
-            }
+        .search-input::placeholder {
+            color: #c0c3c7;
+        }
 
-            /* Random button card  */
-            .btn-outline-secondary {
-                background-color: var(--orange-dark);
-                color: white;
-                border-color: var(--orange-dark);
-                border-radius: 8px;
-            }
+        /* Random button card  */
+        .btn-outline-secondary {
+            background-color: var(--orange-dark);
+            color: white;
+            border-color: var(--orange-dark);
+            border-radius: 8px;
+        }
 
-            .btn-outline-secondary:hover {
-                background-color: var(--orange-hover);
-                border-color: var(--orange-hover);
-            }
+        .btn-outline-secondary:hover {
+            background-color: var(--orange-hover);
+            border-color: var(--orange-hover);
+        }
 
-            /* Navbar shadow */
-            .shadow {
-                box-shadow: 0 0.18rem 0.2rem rgba(0, 0, 0, 0.25) !important;
-            }
+        /* Navbar shadow */
+        .shadow {
+            box-shadow: 0 0.18rem 0.2rem rgba(0, 0, 0, 0.25) !important;
+        }
 
-            /* Random recipe */
-            .random-recipes {
-                background: #ffffff;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin: 1% 2%;
-                padding: 1% 3%;
-            }
+        /* Random recipe */
+        .random-recipes {
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1% 2%;
+            padding: 1% 3%;
+        }
 
-            .mealName {
-                font-size: 400%;
-                margin-bottom: 4%;
-                /* border: 2px solid rgb(0, 255, 255); */
-            }
+        .mealName {
+            font-size: 400%;
+            margin-bottom: 4%;
+            /* border: 2px solid rgb(0, 255, 255); */
+        }
 
-            .inst-meal {
-                display: flex;
-                flex-direction: row-reverse;
-                margin-bottom: 2%;
-            }
+        .inst-meal {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-bottom: 2%;
+        }
 
-            .instructions {
-                display: flex;
-                flex-direction: column;
-                padding-left: 2%;
-                
-                /* border: 2px solid rgb(134, 3, 134); */
-            }
+        .instructions {
+            display: flex;
+            flex-direction: column;
+            padding-left: 2%;
+            /* border: 2px solid rgb(134, 3, 134); */
+        }
 
-            .inst {
-                font-size: 30px;
-                font-weight: 700;
-            }
+        .inst {
+            font-size: 30px;
+            font-weight: 700;
+        }
 
-            .mealInst {
-                font-size: 20px;
-                padding-right: 5%;
-                margin-right: 3%;
-                /* border: 2px solid rgb(224, 57, 79); */
-            }
+        .mealInst {
+            font-size: 20px;
+            padding-right: 5%;
+            margin-right: 3%;
+            /* border: 2px solid rgb(224, 57, 79); */
+        }
 
-            /* Ingredients */
-            .ingredients {
-                padding: 3% 5%;
-                background: rgb(238, 238, 238);
-            }
+        /* Ingredients */
+        .ingredients {
+            padding: 3% 5%;
+            background: var(--orange-light);
+        }
 
-            .ing-title {
-                text-align: center;
-                font-size: 30px;
-                font-weight: 700;
-            }
-            .ingredients>* {
-                align-self: center;
-            }
+        .ing-title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+        }
 
-            /* Random recipe card */
-            .random-recipe {
-                background: #ffffff;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin: 5%;
-            }
+        /* Random recipe card */
+        .random-recipe {
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 5%;
+        }
 
-            .random-recipe-card {
-                width: 10%;
-                border-radius: 10px;
-            }
+        .random-recipe-card {
+            width: 10%;
+            border-radius: 10px;
+        }
 
-            .card-body {
-                padding: 1rem 2rem;
-                margin: 1rem 1rem;
-            }
+        .card-body {
+            padding: 1rem 2rem;
+            margin: 1rem 1rem;
+        }
 
-            .l-s {
-                letter-spacing: 4px;
-            }
+        .l-s {
+            letter-spacing: 4px;
+        }
 
-            /* Footer */
-            .footer {
-                text-align: center;
-                color: #6e6e6e;
-                background-color: orange;
-                padding-top: 2%;
-                padding-bottom: 2%;
-            }
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: #6e6e6e;
+            background-color: orange;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
 
-            .footer>h1 {
-                font-weight: 700;
-            }
-      </style>
+        .footer>h1 {
+            font-weight: 700;
+        }
+
+        .ing-card {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            height: 250px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin: 20px;
+            padding: 10px;
+        }
+    </style>
 
 </head>
 
@@ -198,7 +208,6 @@
 
             <!-- Navbar/Hamburger button content -->
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4 navbar-content"></ul>
 
                 <!-- Search input and random button -->
                 <form class="d-flex mx-3">
@@ -227,14 +236,15 @@
     </section>
     <section class="ingredients">
         <h1 class="ing-title">Ingredients</h1>
-        <h6 id=ingredients>
-            </h6>
+        <!-- List container for search function-->
+        <div id="searched" class="searched-meal"></div>
     </section>
+
 
     <!-- Footer -->
     <footer>
         <div class="footer">
-            <h1>Lets<span><b> Cook</span> it!</b></h1>
+            <h1>Lets<span style="color: black;"><b> Cook</span> it!</b></h1>
         </div>
     </footer>
     <!-- Bootstrap JavaScript -->
@@ -242,73 +252,8 @@
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
         </script>
     <!--Custom JavaScript -->
-    <script src="./js/index.js" type="module"></script>
+    <script src="./js/random.js" type="module"></script>
 
-    <script>
-        function createCardIng(ing) {
-            const card = document.createElement('div');
-            card.className = 'ing-card';
-
-            const name = document.createElement('h2');
-            const nameText = document.createTextNode(ing);
-            name.appendChild(nameText)
-
-            const img = document.createElement('img');
-            img.src = data.strMealThumb;
-            img.alt = data.strMeal;
-            img.width = 150;
-            img.height = 75;
-
-            card.appendChild(name);
-            card.appendChild(img);
-
-            return card;
-        };
-        
-        async function getRandomMeal() {
-            const url=window.location.href;
-            const id=url?.split("id=")?.[1];
-            let data
-            console.log(url)
-            console.log(id)
-
-            if (id) {
-                const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
-                data = await response.json()
-                data = data.meals[0];
-            }
-            else {
-                const response = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
-                data = await response.json()
-                data = data.meals[0];
-            }
-
-            const mealName = data.strMeal
-            const mealInst = data.strInstructions
-            const mealImg = data.strMealThumb
-            
-            document.getElementById('mealName').textContent = mealName
-            document.getElementById('mealInst').textContent = mealInst
-            document.getElementById('mealImg').src = mealImg
-            
-            let ings = data.strIngredient1 + " " + data.strIngredient2 + " " + data.strIngredient3 +
-                " " + data.strIngredient4 + " " + data.strIngredient5 + " " + data.strIngredient6 +
-                " " + data.strIngredient7 + " " + data.strIngredient8 + " " + data.strIngredient9 +
-                " " + data.strIngredient10 + " " + data.strIngredient11 + " " + data.strIngredient12 +
-                " " + data.strIngredient13 + " " + data.strIngredient14 + " " + data.strIngredient15 +
-                " " + data.strIngredient16 + " " + data.strIngredient16 + " " + data.strIngredient17 +
-                " " + data.strIngredient18 + " " + data.strIngredient19 + " " + data.strIngredient20
-        
-            document.getElementById('ingredients').textContent = ings
-
-            console.log(data.strIngredients1)
-        };
-        
-        
-
-        getRandomMeal();
-        
-    </script>
 </body>
 
 </html>

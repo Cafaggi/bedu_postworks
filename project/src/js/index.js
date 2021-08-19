@@ -1,5 +1,5 @@
 import '../css/styles.css';
-import 'regenerator-runtime/runtime';
+import 'regenerator-runtime/runtime.js';
 
 /* Hide and show figures */
 function hideChef(){
