@@ -74,11 +74,11 @@ The users request must contain an unique username, name, lastname, password and 
 
 ```json
 {
-"username": string,  
-"name": string,   
-"lastname": string, 
-"email": string, 
-"type": string
+"username": "string",  
+"name": "string",   
+"lastname": "string", 
+"email": "string", 
+"type": "string"
 "password": "sting
 }
 
@@ -104,12 +104,12 @@ The dogs request must contain a name, size ("Small| Medium | Large"), optional u
 
 ```json
 {
-    "name": string,
-    "size": string,
-    "pictures": string,
-    "description": string,
-    "owner": ObjectID as a string,
-    "location": String
+    "name": "string",
+    "size": "string",
+    "pictures": "string",
+    "description": "string",
+    "owner": "ObjectID as a string",
+    "location": "string"
 }
 
 ```
@@ -129,7 +129,7 @@ As a response you will receive a jason with the following data
     "location": "xxxxxx",
     "createdAt": "xxxxxxxxx",
     "updatedAt": "xxxxxxxxx",
-    "__v": x
+    "__v": "xx"
   }
 ```
 
@@ -141,9 +141,9 @@ The walk request must contain a name, playtime ("1h | 2h | 3h"), an a datetime i
 
 ```json
 {
-    "idDog": ObjectID as a string,
-    "playtime": string,
-    "datetime": string
+    "idDog": "ObjectID as a string",
+    "playtime": "string",
+    "datetime": "string"
 }
 
 ```
@@ -191,11 +191,11 @@ GET : https://walk-my-dog.herokuapp.com/v1/dogs
 ```
 <p> autentication for GET users</p> <br>
 
-
 ```json
-autenication:
-token : XXXXXXXXX
-prefix: Bearer
+{
+token : "XXXXXXXXX"
+prefix: "Bearer"
+}
 ```
 
 ```
