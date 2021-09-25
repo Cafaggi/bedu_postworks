@@ -7,16 +7,24 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#run-server"> Run server</a></li>
     <li><a href="#about-the-project"> About The Project</a></li>
+    <li><a href="#run-server"> Run server</a></li>
 
   </ol><br>
 
-<!-- RUN SEVER -->
-<h2 id="run-sever"> :computer:  1. How to run the server for development</h2>
+<!-- ABOUT THE PROJECT -->
+<h2 id="about-the-project"> :pencil:  1. About The Project</h2>
 
 <p align="justify"> 
-to install the dependencies
+  This is our dog wakl api, developed as a project of the Web Development course at BEDU. 
+</p><br>
+  
+
+<!-- RUN SEVER -->
+<h2 id="run-sever"> :computer:  2. How to run the server for development</h2>
+
+<p align="justify"> 
+Install the dependencies
 </p>
 
 ```
@@ -24,18 +32,58 @@ $ npm install
 ```
 
 <p align="justify"> 
-to deploy the server run
+Setup environment variables
 </p>
 
 ```
-$ npm run start
+export MONGO_URI='mongodb+srv://<user>:<password>@cluster0.0qkhm.mongodb.net/<database>?retryWrites=true&w=majority'
+export PORT=4001
+export SECRET='secret'
+export NODE_ENV='production'
 ```
 
-<!-- ABOUT THE PROJECT -->
-<h2 id="about-the-project"> :pencil:  2. About The Project</h2>
-
 <p align="justify"> 
-  This is our recipe finder project, developed as a project of the Web Development course at BEDU. The project consists of a an API, which request dog walks.
-</p><br>
-  
+To run the local server for developing
+</p>
+
+```
+$ npm run dev
+```
+
+<!-- Documentation -->
+<h2 id="Documentation"> :pencil:  3. Documentation</h2>
+
+<h3 id="POST"> :pencil:  3.1 POST</h2>
+
+```
+POST : https://walk-my-dog.herokuapp.com/v1/[dogs/users/walks]
+```
+<p align="justify"> 
+To create users, dogs, or walks, make a POST request to the corresponding endpoint. The fields required for each model are the folowing:
+</p>
+ 
+<p align="justify"> 
+Users: the usrers request must contain an unique username, name, lastname, password and type ("owner | walk") in order to get posted
+</p>
+```
+{
+"username": string,  
+"name": string,   
+"lastname": string, 
+"email": string, 
+"type": string
+"password": "sting
+}
+```
+<p align="justify"> 
+As a response you will receive a jason with the username, email and tolken 
+</p>
+
+```
+{
+    "username": "xxx",
+    "email": "xxx@xxx.com",
+    "token": "exxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  }
+```
 
