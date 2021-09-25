@@ -35,7 +35,7 @@ const UserSchema = new mongoose.Schema({
   },
   hash: String,
   salt: String
-}, {collection:"users", timestamps: true});
+}, {collection:"Users", timestamps: true});
 
 UserSchema.plugin(uniqueValidator, {message : "user already exists"})
 

@@ -19,6 +19,7 @@ mongoose.set("debug", true)
 
 require('./models/User')
 require('./models/Dog')
+require('./models/Walk')
 
 require('./config/passport')
 

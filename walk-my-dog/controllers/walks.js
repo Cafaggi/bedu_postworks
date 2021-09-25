@@ -1,4 +1,5 @@
-const Walk = require('../models/Walk')
+const mongoose = require('mongoose')
+const Walk = mongoose.model("Walk")
 
 // CRUD
 
