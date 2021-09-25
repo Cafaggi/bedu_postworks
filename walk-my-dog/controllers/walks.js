@@ -2,26 +2,48 @@ const Walk = require('../models/Walk')
 
 // CRUD
 
-function createWalk(req, res){
+function createWalk(req, res, next){
 	var walk = new Walk(req.body);
-	res.status(200).send(walk);
+	walk.save().then(mas =>{
+		res.status(200).send(mas)
+	}).catch(next)
 }
 
-function getWalk(req, res){
-	var walk1 = new Walk(1, 2, '25/06/2021', 3, 2, 'Activa')
-  	var walk2 = new Walk(2, 5, '5/12/2021', 4, 1, 'Rechazada')
-  	res.send([walk1,walk2])
+function getWalk(req, res, next){
+	if (req.params.id){
+		Walk.findById(req.params.id)
+		.then(mas => {res.send(mas)})
+		.catch(next)
+	} else {
+		Walk.find()
+		.then(walks => {res.send(walks)})
+		.catch(next)
+	}
 }
 
-function modifyWalk(req, res){
-	var walk = new Walk(req.params.id,2, '25/06/2021', 3, 2, 'Activa')
-	var modificaciones = req.body
-	walk = {...walk,...modificaciones }
-	res.send(walk)
+function modifyWalk(req, res, next){
+	Walk.findById(req.params.id)
+	.then(walk => {
+		if(!walk){ return res.sendStatus(404); }
+		let newInfo = req.body
+		if (typeof newInfo.idDog !== "undefined")
+			walk.idDog = newInfo.idDog
+		if(typeof newInfo.playtime !== "undefined")
+			walk.playtime = newInfo.playtime
+		if (typeof newInfo.datetime !== 'undefined')
+        	walk.datetime = newInfo.datetime
+        walk.save()
+        .then(updated => {                                   
+        res.status(201).json(updated.publicData())})
+        .catch(next)
+	})
+	.catch(next)
 }
 
-function deleteWalk(req, res){
-	res.status(200).send(`La walk ${req.params.id} se elimino`)
+function deleteWalk(req, res, next){
+	Walk.findOneAndDelete({_id:req.params.id})
+	.then(r => {res.status(200).send("this walk has been deleted")})
+	.catch(next)
 }
 
 module.exports = {

@@ -34,6 +34,12 @@ function modifyUser(req, res, next){
     let newInfo = req.body
     if (typeof newInfo.username !== 'undefined')
       user.username = newInfo.username
+	if (typeof newInfo.name !== 'undefined')
+      user.name = newInfo.name
+	if (typeof newInfo.email !== 'undefined')
+      user.email = newInfo.email
+	if (typeof newInfo.type !== 'undefined')
+      user.type = newInfo.type
     if (typeof newInfo.password !== 'undefined')
       user.createPassword(newInfo.password)
     user.save().then(updatedUser => {

@@ -1,14 +1,18 @@
-// Walk.js
-/** Clase que representa una walk de adopción */
-class Walk {
-  constructor(id, idDog, fechaDeCreacion, idUserAnunciante, idUserSolicitante, estado) {
-    this.id = id;
-    this.idDog = idDog;
-    this.fechaDeCreacion = fechaDeCreacion;
-    this.idUserAnunciante = idUserAnunciante;
-    this.idUserSolicitante = idUserSolicitante;
-    this.estado = estado;
-  }
-}
+const mongoose = require('mongoose');
 
-module.exports = Walk;
+const WalkSchema = new mongoose.Schema({
+  idDog:{type: mongoose.Schema.Types.ObjectId, ref:'Dog'},
+	playtime:{type:String, enum: ['1h', '2h', '3h']},
+	datetime:{type: String, required: true},
+},{timestamps: true, collection:'Dogs'})
+
+
+DogSchema.methods.publicData = () => {
+	return {
+	    idDog: this.idDog,
+	    playtime: this.playtime,
+	    datetime: this.datetime,
+	}
+};
+
+mongoose.model("Walk", WalkSchema);

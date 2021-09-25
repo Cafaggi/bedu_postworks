@@ -4,8 +4,8 @@ const Dog = mongoose.model("Dog")
 // CRUD
 
 function createDog(req, res, next){
-	var mascota = new Dog(req.body);
-	mascota.save().then(mas =>{
+	var dog = new Dog(req.body);
+	dog.save().then(mas =>{
 		res.status(200).send(mas)
 	}).catch(next)
 }
@@ -24,22 +24,22 @@ function getDog(req, res, next){
 
 function modifyDog(req, res, next){
 	Dog.findById(req.params.id)
-	.then(mascota => {
-		if(!mascota){ return res.sendStatus(404); }
+	.then(dog => {
+		if(!dog){ return res.sendStatus(404); }
 		let newInfo = req.body
 		if (typeof newInfo.name !== "undefined")
-			mascota.name = newInfo.name
+			dog.name = newInfo.name
 		if(typeof newInfo.size !== "undefined")
-			mascota.size = newInfo.size
+			dog.size = newInfo.size
 		if (typeof newInfo.pictures !== 'undefined')
-        	mascota.pictures = newInfo.pictures
+        	dog.pictures = newInfo.pictures
       	if (typeof newInfo.description !== 'undefined')
-        	mascota.description = newInfo.description
+        	dog.description = newInfo.description
       	if (typeof newInfo.owner !== 'undefined')
-        	mascota.owner = newInfo.owner
+        	dog.owner = newInfo.owner
       	if (typeof newInfo.location !== 'undefined')
-        	mascota.location = newInfo.location
-        mascota.save()
+        	dog.location = newInfo.location
+        dog.save()
         .then(updated => {                                   
         res.status(201).json(updated.publicData())})
         .catch(next)
@@ -49,7 +49,7 @@ function modifyDog(req, res, next){
 
 function deleteDog(req, res,next){
 	Dog.findOneAndDelete({_id:req.params.id})
-	.then(r => {res.status(200).send("La mascota se elimino.")})
+	.then(r => {res.status(200).send("the dog has been deleted")})
 	.catch(next)
 }
 

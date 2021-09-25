@@ -11,7 +11,7 @@ const auth = require('./auth')
 router.get('/', auth.requerido, getUsers);
 router.get('/:id', auth.requerido, getUsers);
 router.post('/', createUser);
-router.post('/entrar', logIn)
+router.post('/login', logIn)
 router.put('/:id', auth.requerido, modifyUser);
 router.delete('/:id', auth.requerido, deleteUser);
 
