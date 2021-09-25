@@ -82,7 +82,7 @@ The users request must contain an unique username, name, lastname, password and 
 "name": "string",   
 "lastname": "string", 
 "email": "string", 
-"type": "string"
+"type": "string",
 "password": "sting
 }
 
@@ -197,7 +197,7 @@ GET : https://walk-my-dog.herokuapp.com/v1/dogs
 
 ```json
 {
-"token" : "XXXXXXXXX"
+"token" : "XXXXXXXXX",
 "prefix" : "Bearer"
 }
 ```
@@ -205,3 +205,15 @@ GET : https://walk-my-dog.herokuapp.com/v1/dogs
 ```
 GET : https://walk-my-dog.herokuapp.com/v1/users
 ```
+
+<h3 id="PUT">  3.3 PUT</h3>
+
+```
+PUT : https://walk-my-dog.herokuapp.com/v1/[dogs|users|walks]
+```
+<p align="justify"> 
+To modify users, dogs, or walks, make a PUT request to the corresponding endpoint. <br>
+Autentication is needed for modify users <br>
+
+If an ID is required to modify an object, refer to post section for information about the elements and validation in each object. 
+</p> <br>
