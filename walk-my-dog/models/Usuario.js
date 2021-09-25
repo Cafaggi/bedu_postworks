@@ -1,19 +1,3 @@
-// // Usuario.js
-// /** Clase que representa a un usuario de la plataforma*/
-// class Usuario {
-//   constructor(id, username, nombre, apellido, email, password, tipo) {
-//     this.id = id;
-//     this.username = username;
-//     this.nombre = nombre;
-//     this.apellido = apellido;
-//     this.email = email;
-//     this.password = password;
-//     this.tipo = tipo; // tipo normal o anunciante
-//   }
-// }
-
-// module.exports = Usuario;
-
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 const crypto = require('crypto');
@@ -30,7 +14,7 @@ const UsuarioSchema = new mongoose.Schema({
     match : [/^[a-z0-9]+$/, "Username invalido"],
     index: true
   },
-  nombre: {
+  name: {
     type:String,
     required: true
   },
@@ -47,7 +31,7 @@ const UsuarioSchema = new mongoose.Schema({
   },
   tipo:{
     type:String,
-    enum: ['normal', 'anunciante']
+    enum: ['normal', 'owner']
   },
   hash: String,
   salt: String
@@ -92,7 +76,7 @@ UsuarioSchema.methods.publicData = function() {
   return {
     id: this.id,
     username: this.username,
-    nombre: this.nombre,
+    name: this.name,
     apellido: this.apellido,
     email: this.email,
     tipo: this.tipo

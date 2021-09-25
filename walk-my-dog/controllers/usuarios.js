@@ -38,8 +38,8 @@ function modificarUsuario(req, res, next){
       user.bio = nuevaInfo.bio
     if (typeof nuevaInfo.foto !== 'undefined')
       user.foto = nuevaInfo.foto
-    if (typeof nuevaInfo.ubicacion !== 'undefined')
-      user.ubicacion = nuevaInfo.ubicacion
+    if (typeof nuevaInfo.location !== 'undefined')
+      user.location = nuevaInfo.location
     if (typeof nuevaInfo.telefono !== 'undefined')
       user.telefono = nuevaInfo.telefono
     if (typeof nuevaInfo.password !== 'undefined')
