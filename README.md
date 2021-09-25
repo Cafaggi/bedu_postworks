@@ -133,7 +133,7 @@ As a response you will receive a jason with the following data
   }
 ```
 
-<h4 id="walks">  3.1.3 Wals</h4>
+<h4 id="walks">  3.1.3 Walks</h4>
 
 <p align="justify"> 
 The walk request must contain a name, playtime ("1h | 2h | 3h"), an a datetime in which the dog wil be received for the walk in order to get posted.
@@ -141,9 +141,9 @@ The walk request must contain a name, playtime ("1h | 2h | 3h"), an a datetime i
 
 ```
 {
-    "idDog": "614ed8c236d2a1849c05e589",
-    "playtime": "1h",
-    "datetime": "23 sep"
+    "idDog": ObjectID as a string,
+    "playtime": string,
+    "datetime": string
 }
 
 ```
@@ -179,10 +179,13 @@ Otherwise, an array of all the elements in the database will be returned. Only n
 </p> <br>
 
 <p> Single object returned</p> <br>
+
 ```
 GET : https://walk-my-dog.herokuapp.com/v1/dogs/614ed8c236d2a1849c05e589
 ```
+
 <p> multiple object returned</p> <br>
+
 ```
 GET : https://walk-my-dog.herokuapp.com/v1/dogs
 ```
