@@ -9,6 +9,7 @@
   <ol>
     <li><a href="#about-the-project"> About The Project</a></li>
     <li><a href="#run-server"> Run server</a></li>
+    <li><a href="#documentation"> Documentation</a></li>
 
   </ol><br>
 
@@ -56,7 +57,7 @@ $ npm run dev
 <h3 id="POST"> :pencil:  3.1 POST</h2>
 
 ```
-POST : https://walk-my-dog.herokuapp.com/v1/[dogs/users/walks]
+POST : https://walk-my-dog.herokuapp.com/v1/[dogs|users|walks]
 ```
 <p align="justify"> 
 To create users, dogs, or walks, make a POST request to the corresponding endpoint. The fields required for each model are the folowing:
@@ -65,6 +66,7 @@ To create users, dogs, or walks, make a POST request to the corresponding endpoi
 <p align="justify"> 
 Users: the usrers request must contain an unique username, name, lastname, password and type ("owner | walk") in order to get posted
 </p>
+
 ```
 {
 "username": string,  
@@ -74,7 +76,9 @@ Users: the usrers request must contain an unique username, name, lastname, passw
 "type": string
 "password": "sting
 }
+
 ```
+
 <p align="justify"> 
 As a response you will receive a jason with the username, email and tolken 
 </p>
