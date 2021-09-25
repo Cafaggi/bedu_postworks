@@ -66,7 +66,7 @@ Autentication is not currently needed for creating users, dogs and walks <br>
 The fields required for each model are the folowing:
 </p>
  
-<h4 id="users">  3.1.1 Users</h4>
+<h4 id="users"> :adult: 3.1.1 Users</h4>
 
 <p align="justify"> 
 The users request must contain an unique username, name, lastname, password and type ("owner | walk") in order to get posted
@@ -96,7 +96,7 @@ As a response you will receive a jason with the username, email and tolken
   }
 ```
 
-<h4 id="users">  3.1.2 Dogs</h4>
+<h4 id="users"> :dog: 3.1.2 Dogs</h4>
 
 <p align="justify"> 
 The dogs request must contain a name, size ("Small| Medium | Large"), optional url of a picture, descriprion of the dog, a id of the owner and a location in which the dog wil be received for the walk in order to get posted
@@ -133,7 +133,7 @@ As a response you will receive a jason with the following data
   }
 ```
 
-<h4 id="walks">  3.1.3 Walks</h4>
+<h4 id="walks"> :service_dog: 3.1.3 Walks</h4>
 
 <p align="justify"> 
 The walk request must contain a name, playtime ("1h | 2h | 3h"), an a datetime in which the dog wil be received for the walk in order to get posted.
