@@ -60,7 +60,9 @@ $ npm run dev
 POST : https://walk-my-dog.herokuapp.com/v1/[dogs|users|walks]
 ```
 <p align="justify"> 
-To create users, dogs, or walks, make a POST request to the corresponding endpoint. The fields required for each model are the folowing:
+To create users, dogs, or walks, make a POST request to the corresponding endpoint. <br>
+Autentication is not currently needed for creating users, dogs and walks <br>
+The fields required for each model are the folowing:
 </p>
  
 <h4 id="users">  3.1.1 Users</h4>
@@ -93,7 +95,7 @@ As a response you will receive a jason with the username, email and tolken
   }
 ```
 
-<h4 id="users">  3.1.1 Dogs</h4>
+<h4 id="users">  3.1.2 Dogs</h4>
 
 <p align="justify"> 
 The dogs request must contain a name, size ("Small| Medium | Large"), optional url of a picture, descriprion of the dog, a id of the owner and a location in which the dog wil be received for the walk in order to get posted
@@ -130,3 +132,33 @@ As a response you will receive a jason with the following data
   }
 ```
 
+<h4 id="walks">  3.1.3 Wals</h4>
+
+<p align="justify"> 
+The walk request must contain a name, playtime ("1h | 2h | 3h"), an a datetime in which the dog wil be received for the walk in order to get posted.
+</p>
+
+```
+{
+    "idDog": "614ed8c236d2a1849c05e589",
+    "playtime": "1h",
+    "datetime": "23 sep"
+}
+
+```
+
+<p align="justify"> 
+As a response you will receive a jason with the following data
+</p>
+
+```
+{
+    "_id": "xxxxxxxxx",
+    "idDog": "xxxxxxxxxxxxxx",
+    "playtime": "xxxx",
+    "datetime": "xxxxxxxx",
+    "createdAt": "xxxxxxxxxxxxxxx",
+    "updatedAt": "xxxxxxxxxxxxxxxxxxx",
+    "__v": 0
+  }
+```
