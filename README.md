@@ -63,7 +63,7 @@ POST : https://walk-my-dog.herokuapp.com/v1/[dogs|users|walks]
 To create users, dogs, or walks, make a POST request to the corresponding endpoint. The fields required for each model are the folowing:
 </p>
  
-<h5 id="users">  3.1.1 Users</h2>
+<h5 id="users">  3.1.1 Users</h5>
 
 <p align="justify"> 
 The usrers request must contain an unique username, name, lastname, password and type ("owner | walk") in order to get posted
