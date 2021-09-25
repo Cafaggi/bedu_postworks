@@ -18,7 +18,11 @@
 <h2 id="about-the-project"> :pencil:  1. About The Project</h2>
 
 <p align="justify"> 
-  This is our dog wakl api, developed as a project of the Web Development course at BEDU. 
+  This is our dog wakl api, developed as a project of the Web Development course at BEDU. This api aims for a control system for dog's walks requests <br>
+  There are three models in the code: Users, Walks, and dogs. This model represents the operation where a Owner(User) reques walks(Walk) to walkers(User) for its dogs(Dogs).<br>
+  Each model has enough information to select a walker, dog, place, time, and duration of the walk for each incidence.<br>
+  The API supports sesions for user to autenticate and modification of all objets.
+
 </p><br>
   
 
@@ -193,8 +197,8 @@ GET : https://walk-my-dog.herokuapp.com/v1/dogs
 
 ```json
 {
-token : "XXXXXXXXX"
-prefix: "Bearer"
+"token" : "XXXXXXXXX"
+"prefix" : "Bearer"
 }
 ```
 
