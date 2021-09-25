@@ -54,7 +54,7 @@ $ npm run dev
 <!-- Documentation -->
 <h2 id="Documentation"> :pencil:  3. Documentation</h2>
 
-<h5 id="POST">  3.1 POST</h2>
+<h3 id="POST">  3.1 POST</h3>
 
 ```
 POST : https://walk-my-dog.herokuapp.com/v1/[dogs|users|walks]
@@ -63,10 +63,10 @@ POST : https://walk-my-dog.herokuapp.com/v1/[dogs|users|walks]
 To create users, dogs, or walks, make a POST request to the corresponding endpoint. The fields required for each model are the folowing:
 </p>
  
-<h5 id="users">  3.1.1 Users</h5>
+<h4 id="users">  3.1.1 Users</h4>
 
 <p align="justify"> 
-The usrers request must contain an unique username, name, lastname, password and type ("owner | walk") in order to get posted
+The users request must contain an unique username, name, lastname, password and type ("owner | walk") in order to get posted
 </p>
 
 ```
@@ -90,6 +90,43 @@ As a response you will receive a jason with the username, email and tolken
     "username": "xxx",
     "email": "xxx@xxx.com",
     "token": "exxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  }
+```
+
+<h4 id="users">  3.1.1 Dogs</h4>
+
+<p align="justify"> 
+The dogs request must contain a name, size ("Small| Medium | Large"), optional url of a picture, descriprion of the dog, a id of the owner and a location in which the dog wil be received for the walk in order to get posted
+</p>
+
+```
+{
+    "name": string,
+    "size": string,
+    "pictures": string,
+    "description": string,
+    "owner": ObjectID as a string,
+    "location": String
+}
+
+```
+
+<p align="justify"> 
+As a response you will receive a jason with the following data
+</p>
+
+```
+{
+    "_id": "xxxx",
+    "name": "xxxx",
+    "size": "xxxx",
+    "pictures": "xxxx",
+    "description": "xxx xxxx",
+    "owner": "xxxxxxxxxxxx",
+    "location": "xxxxxx",
+    "createdAt": "xxxxxxxxx",
+    "updatedAt": "xxxxxxxxx",
+    "__v": x
   }
 ```
 
