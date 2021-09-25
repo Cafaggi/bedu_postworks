@@ -85,7 +85,7 @@ The users request must contain an unique username, name, lastname, password and 
 ```
 
 <p align="justify"> 
-As a response you will receive a jason with the username, email and tolken 
+As a response you will receive a jason with the username, email and tolken. This tolken is required for autentication to get information of users. 
 </p>
 
 ```
@@ -171,8 +171,8 @@ As a response you will receive a jason with the following data
 GET : https://walk-my-dog.herokuapp.com/v1/[dogs|users|walks]
 ```
 <p align="justify"> 
-To get users, dogs, or walks, make a POST request to the corresponding endpoint. <br>
-Autentication is not currently needed for geting users, dogs and walks, but will be implemented in the future <br>
+To get users, dogs, or walks, make a GET request to the corresponding endpoint. <br>
+Autentication is needed for geting users <br>
 
 If an ID is passed as an argument in the endponint, a specific [dog|user|walk] will be returned<br>
 Otherwise, an array of all the elements in the database will be returned. Only non-sensible data will be returned in the body of the request. 
@@ -188,4 +188,15 @@ GET : https://walk-my-dog.herokuapp.com/v1/dogs/614ed8c236d2a1849c05e589
 
 ```
 GET : https://walk-my-dog.herokuapp.com/v1/dogs
+```
+<p> autentication for GET users</p> <br>
+
+```
+autenication:
+token : XXXXXXXXX
+prefix: Bearer
+```
+
+```
+GET : https://walk-my-dog.herokuapp.com/v1/users
 ```
