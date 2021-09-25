@@ -1,21 +1,16 @@
 var router = require('express').Router()
 
 var {
-	crearDog,
-	obtenerDog,
-	modificarDog,
-	eliminarDog,
-	count
+	createDog,
+	getDog,
+	modifyDog,
+	deleteDog,
 } = require('../controllers/dogs');
 
-router.get('/', obtenerDog);
-router.get('/count/:cat', count);
-router.get('/:id', obtenerDog);
-router.post('/', crearDog);
-router.put('/:id', modificarDog);
-router.delete('/:id', eliminarDog);
+router.get('/', getDog);
+router.get('/:id', getDog);
+router.post('/', createDog);
+router.put('/:id', modifyDog);
+router.delete('/:id', deleteDog);
 
 module.exports = router;
-
-localhost:4001//v1/dogs/count/Gato
-localhost:4001//v1/dogs/id=1244123531

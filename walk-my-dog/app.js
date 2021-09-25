@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  process.env.MONGO_URI, // obtiene la url de conexión desde las variables de entorno
+  process.env.MONGO_URI,
   { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
 );
 mongoose.set("debug", true)

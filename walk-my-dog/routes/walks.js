@@ -1,15 +1,15 @@
 var router = require('express').Router()
 
 var {
-	crearWalk,
-	obtenerWalk,
-	modificarWalk,
-	eliminarWalk
+	createWalk,
+	getWalk,
+	modifyWalk,
+	deleteWalk
 } = require('../controllers/walks');
 
-router.get('/', obtenerWalk);
-router.post('/', crearWalk);
-router.put('/:id', modificarWalk);
-router.delete('/:id', eliminarWalk);
+router.get('/', getWalk);
+router.post('/', createWalk);
+router.put('/:id', modifyWalk);
+router.delete('/:id', deleteWalk);
 
 module.exports = router;

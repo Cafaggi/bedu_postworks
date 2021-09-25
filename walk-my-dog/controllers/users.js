@@ -4,7 +4,7 @@ const passport = require('passport');
 
 // CRUD
 
-function crearUser (req, res, next){
+function createUser (req, res, next){
 	const body = req.body,
 		password = body.password
 
@@ -18,7 +18,7 @@ function crearUser (req, res, next){
 	})
 	.catch(next)
 }
-function obtenerUsers(req, res, next) {
+function getUsers(req, res, next) {
 
   User.findById(req.user.id, (err, user) => {
     if (!user || err) {
@@ -28,39 +28,31 @@ function obtenerUsers(req, res, next) {
   }).catch(err => res.send(err));
 }
 
-function modificarUser(req, res, next){
+function modifyUser(req, res, next){
 	User.findById(req.user.id).then(user => {
     if (!user) { return res.sendStatus(401); }
-    let nuevaInfo = req.body
-    if (typeof nuevaInfo.username !== 'undefined')
-      user.username = nuevaInfo.username
-    if (typeof nuevaInfo.bio !== 'undefined')
-      user.bio = nuevaInfo.bio
-    if (typeof nuevaInfo.foto !== 'undefined')
-      user.foto = nuevaInfo.foto
-    if (typeof nuevaInfo.location !== 'undefined')
-      user.location = nuevaInfo.location
-    if (typeof nuevaInfo.telefono !== 'undefined')
-      user.telefono = nuevaInfo.telefono
-    if (typeof nuevaInfo.password !== 'undefined')
-      user.createPassword(nuevaInfo.password)
+    let newInfo = req.body
+    if (typeof newInfo.username !== 'undefined')
+      user.username = newInfo.username
+    if (typeof newInfo.password !== 'undefined')
+      user.createPassword(newInfo.password)
     user.save().then(updatedUser => {
       res.status(201).json(updatedUser.publicData())
     }).catch(next)
   }).catch(next)
 }
 
-function eliminarUser(req, res, next){
+function deleteUser(req, res, next){
 	User.findOneAndDelete({_id: req.user.id})
 	.then(r => {
-		res.status(200).send("User eliminado")
+		res.status(200).send("User deleted")
 	})
 	.catch(next)
 }
 
-function iniciarSesion(req, res, next){
+function logIn(req, res, next){
 	if (!req.body.email || !req.body.password){
-		return res.status(422).json({error : {email : "Falta informacion"}})
+		return res.status(422).json({error : {email : "Missing info"}})
 	}
 
 	passport.authenticate('local',
@@ -68,7 +60,7 @@ function iniciarSesion(req, res, next){
 		function (err, user, info){
 			if (err){ return next(err)}
 			if (user) {
-				user.token = user.generaJWT();
+				user.token = user.generateJWT();
 			} else {
 				return res.status(422).json(info);
 			}
@@ -76,11 +68,11 @@ function iniciarSesion(req, res, next){
 }
 
 module.exports = {
-	crearUser,
-	obtenerUsers,
-	modificarUser,
-	eliminarUser,
-	iniciarSesion
+	createUser,
+	getUsers,
+	modifyUser,
+	deleteUser,
+	logIn
 }
 
 

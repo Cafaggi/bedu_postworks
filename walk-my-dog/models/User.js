@@ -49,7 +49,7 @@ UserSchema.methods.validatePassword = function (password) {
   return this.hash === newHash
 }
 
-UserSchema.methods.generaJWT = function() {
+UserSchema.methods.generateJWT = function() {
   const today = new Date();
   const exp = new Date(today);
   exp.setDate(today.getDate() + 60);
@@ -65,7 +65,7 @@ UserSchema.methods.toAuthJSON = function(){
   return {
     username: this.username,
     email: this.email,
-    token: this.generaJWT()
+    token: this.generateJWT()
   }
 }
 

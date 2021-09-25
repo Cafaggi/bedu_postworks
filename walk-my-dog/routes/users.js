@@ -1,18 +1,18 @@
 const router = require('express').Router();
 const {
-	crearUser,
-	obtenerUsers,
-	modificarUser,
-	eliminarUser,
-	iniciarSesion
+	createUser,
+	getUsers,
+	modifyUser,
+	deleteUser,
+	logIn
 } = require('../controllers/users');
 const auth = require('./auth')
 
-router.get('/', auth.requerido, obtenerUsers);
-router.get('/:id', auth.requerido, obtenerUsers);
-router.post('/', crearUser);
-router.post('/entrar', iniciarSesion)
-router.put('/:id', auth.requerido, modificarUser);
-router.delete('/:id', auth.requerido, eliminarUser);
+router.get('/', auth.requerido, getUsers);
+router.get('/:id', auth.requerido, getUsers);
+router.post('/', createUser);
+router.post('/entrar', logIn)
+router.put('/:id', auth.requerido, modifyUser);
+router.delete('/:id', auth.requerido, deleteUser);
 
 module.exports = router;
