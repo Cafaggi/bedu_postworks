@@ -72,7 +72,7 @@ The fields required for each model are the folowing:
 The users request must contain an unique username, name, lastname, password and type ("owner | walk") in order to get posted
 </p>
 
-```
+```json
 {
 "username": string,  
 "name": string,   
@@ -88,7 +88,7 @@ The users request must contain an unique username, name, lastname, password and 
 As a response you will receive a jason with the username, email and tolken. This tolken is required for autentication to get information of users. 
 </p>
 
-```
+```json
 {
     "username": "xxx",
     "email": "xxx@xxx.com",
@@ -102,7 +102,7 @@ As a response you will receive a jason with the username, email and tolken. This
 The dogs request must contain a name, size ("Small| Medium | Large"), optional url of a picture, descriprion of the dog, a id of the owner and a location in which the dog wil be received for the walk in order to get posted
 </p>
 
-```
+```json
 {
     "name": string,
     "size": string,
@@ -118,7 +118,7 @@ The dogs request must contain a name, size ("Small| Medium | Large"), optional u
 As a response you will receive a jason with the following data
 </p>
 
-```
+```json
 {
     "_id": "xxxx",
     "name": "xxxx",
@@ -139,7 +139,7 @@ As a response you will receive a jason with the following data
 The walk request must contain a name, playtime ("1h | 2h | 3h"), an a datetime in which the dog wil be received for the walk in order to get posted.
 </p>
 
-```
+```json
 {
     "idDog": ObjectID as a string,
     "playtime": string,
@@ -152,7 +152,7 @@ The walk request must contain a name, playtime ("1h | 2h | 3h"), an a datetime i
 As a response you will receive a jason with the following data
 </p>
 
-```
+```json
 {
     "_id": "xxxxxxxxx",
     "idDog": "xxxxxxxxxxxxxx",
@@ -191,7 +191,8 @@ GET : https://walk-my-dog.herokuapp.com/v1/dogs
 ```
 <p> autentication for GET users</p> <br>
 
-```
+
+```json
 autenication:
 token : XXXXXXXXX
 prefix: Bearer
