@@ -7,7 +7,7 @@ const DogSchema = new mongoose.Schema({
 	description:{type: String, required: true},
 	owner:{type: mongoose.Schema.Types.ObjectId, ref:'User'},
 	location:String
-},{timestamps: true, collection:'Dogs'})
+},{timestamps: true, collection:'dogs'})
 
 
 DogSchema.methods.publicData = () => {

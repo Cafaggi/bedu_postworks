@@ -5,54 +5,51 @@ const jwt = require('jsonwebtoken');
 const secret = require('../config').secret;
 
 
-const UsuarioSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
   username: {
     type: String,
     unique: true,
-    required: [true, "No puede estar vacio el campo username"],
+    required: [true, "username field must be filled"],
     lowercase: true,
-    match : [/^[a-z0-9]+$/, "Username invalido"],
+    match : [/^[a-z0-9]+$/, "invalid Username"],
     index: true
   },
   name: {
     type:String,
     required: true
   },
-  apellido:{
+  lastname:{
     type:String,
     required: true
   },
   email: {
     type:String,
     unique: true,
-    required: [true, "Falta email"],
-    match:[/\S+@\S+.\S+/, "Email invalido"],
+    required: [true, "email must be filled"],
+    match:[/\S+@\S+.\S+/, "invalid Email"],
     index: true
   },
-  tipo:{
+  type:{
     type:String,
-    enum: ['normal', 'owner']
+    enum: ['walker', 'owner']
   },
   hash: String,
   salt: String
-}, {collection:"usuarios", timestamps: true});
+}, {collection:"users", timestamps: true});
 
-UsuarioSchema.plugin(uniqueValidator, {message : "Ya existe"})
+UserSchema.plugin(uniqueValidator, {message : "user already exists"})
 
-
-UsuarioSchema.methods.crearPassword = function (password) {
+UserSchema.methods.createPassword = function (password) {
   this.salt = crypto.randomBytes(16).toString('hex');
-  this.hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512')
-  .toString("hex")
+  this.hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512').toString("hex")
 }
 
-UsuarioSchema.methods.validarPassword = function (password) {
-  const newHash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512')
-  .toString('hex')
+UserSchema.methods.validatePassword = function (password) {
+  const newHash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512').toString('hex')
   return this.hash === newHash
 }
 
-UsuarioSchema.methods.generaJWT = function() {
+UserSchema.methods.generaJWT = function() {
   const today = new Date();
   const exp = new Date(today);
   exp.setDate(today.getDate() + 60);
@@ -64,7 +61,7 @@ UsuarioSchema.methods.generaJWT = function() {
   }, secret)
 }
 
-UsuarioSchema.methods.toAuthJSON = function(){
+UserSchema.methods.toAuthJSON = function(){
   return {
     username: this.username,
     email: this.email,
@@ -72,18 +69,18 @@ UsuarioSchema.methods.toAuthJSON = function(){
   }
 }
 
-UsuarioSchema.methods.publicData = function() {
+UserSchema.methods.publicData = function() {
   return {
     id: this.id,
     username: this.username,
     name: this.name,
-    apellido: this.apellido,
+    lastname: this.lastname,
     email: this.email,
-    tipo: this.tipo
+    type: this.type
   }
 }
 
-mongoose.model("Usuario", UsuarioSchema)
+mongoose.model("User", UserSchema)
 
 
 
