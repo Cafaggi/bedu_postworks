@@ -54,7 +54,7 @@ $ npm run dev
 <!-- Documentation -->
 <h2 id="Documentation"> :pencil:  3. Documentation</h2>
 
-<h3 id="POST"> :pencil:  3.1 POST</h2>
+<h5 id="POST">  3.1 POST</h2>
 
 ```
 POST : https://walk-my-dog.herokuapp.com/v1/[dogs|users|walks]
@@ -63,8 +63,10 @@ POST : https://walk-my-dog.herokuapp.com/v1/[dogs|users|walks]
 To create users, dogs, or walks, make a POST request to the corresponding endpoint. The fields required for each model are the folowing:
 </p>
  
+<h5 id="users">  3.1.1 Users</h2>
+
 <p align="justify"> 
-Users: the usrers request must contain an unique username, name, lastname, password and type ("owner | walk") in order to get posted
+The usrers request must contain an unique username, name, lastname, password and type ("owner | walk") in order to get posted
 </p>
 
 ```
