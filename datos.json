@@ -1,0 +1,56 @@
+[{
+    "username": "juanito",
+"name": "juancho",
+"lastname": "small",
+"email": "asdf@gmail.com",
+"type": "owner",
+"password": "pass"
+},
+
+{
+    "username": "juanito",
+    "email": "asdf@gmail.com",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGVkZmZjMmRlYTg0ODk4ZjUzOWZjMCIsInVzZXJuYW1lIjoianVhbml0byIsImV4cCI6MTYzNzc0NjcwMSwiaWF0IjoxNjMyNTU5MTAxfQ.aQRJnlQfzziSNcZND_1IsaF9Sy3U-wHizoB3DxmZDrQ"
+  }
+]
+
+[
+{
+    "name": "perrito1",
+    "size": "Small",
+    "pictures": "https://picsum.photos/id/237/200/300",
+    "description": "mi perrito",
+    "owner": "614edffc2dea84898f539fc0",
+    "location": "mi casita"
+}
+,
+{
+    "_id": "614ed8c236d2a1849c05e589",
+    "name": "perrito1",
+    "size": "Small",
+    "pictures": "https://picsum.photos/id/237/200/300",
+    "description": "mi perrito",
+    "owner": "614ed48066701982dee94c6e",
+    "location": "mi casita",
+    "createdAt": "2021-09-25T08:07:30.121Z",
+    "updatedAt": "2021-09-25T08:07:30.121Z",
+    "__v": 0
+  }
+]
+
+[
+{
+    "idDog": "614ed8c236d2a1849c05e589",
+    "playtime": "1h",
+    "datetime": "23 sep"
+}
+{
+    "_id": "614edf312dea84898f539fbe",
+    "idDog": "614ed8c236d2a1849c05e589",
+    "playtime": "1h",
+    "datetime": "23 sep",
+    "createdAt": "2021-09-25T08:34:57.606Z",
+    "updatedAt": "2021-09-25T08:34:57.606Z",
+    "__v": 0
+  }
+]

@@ -1,9 +1,41 @@
-<h1 align="center"> BEDU Postworks </h1>
+<h1 align="center"> Walk my dog </h1>
+<h3 align="center"> Walk my dog Webpage </h3>
 
-<h2 align="center"> Team 12 </h2>
-<p align="center"> :rocket: </p>
-<p align= "center"> Welcome to our repository of the Web Development course at BEDU.</p><br>
+<!-- TABLE OF CONTENTS -->
+<h2 id="table-of-contents"> :book: Table of Contents</h2>
 
-<h3> API Project</h3>
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#run-server"> Run server</a></li>
+    <li><a href="#about-the-project"> About The Project</a></li>
 
-[Click here to view the project](https://github.com/Cafaggi/bedu_postworks/tree/main/walk-my-dog) 
+  </ol><br>
+
+<!-- RUN SEVER -->
+<h2 id="run-sever"> :computer:  1. How to run the server for development</h2>
+
+<p align="justify"> 
+to install the dependencies
+</p>
+
+```
+$ npm install
+```
+
+<p align="justify"> 
+to deploy the server run
+</p>
+
+```
+$ npm run start
+```
+
+<!-- ABOUT THE PROJECT -->
+<h2 id="about-the-project"> :pencil:  2. About The Project</h2>
+
+<p align="justify"> 
+  This is our recipe finder project, developed as a project of the Web Development course at BEDU. The project consists of a an API, which request dog walks.
+</p><br>
+  
+
