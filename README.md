@@ -10,8 +10,9 @@
     <li><a href="#about-the-project"> About The Project</a></li>
     <li><a href="#run-server"> Run server</a></li>
     <li><a href="#documentation"> Documentation</a></li>
-
-  </ol><br>
+  </ol>
+  
+  <br>
 
 <!-- ABOUT THE PROJECT -->
 <h2 id="about-the-project"> :pencil:  1. About The Project</h2>
@@ -161,4 +162,27 @@ As a response you will receive a jason with the following data
     "updatedAt": "xxxxxxxxxxxxxxxxxxx",
     "__v": 0
   }
+```
+
+
+<h3 id="GET">  3.2 GET</h3>
+
+```
+GET : https://walk-my-dog.herokuapp.com/v1/[dogs|users|walks]
+```
+<p align="justify"> 
+To get users, dogs, or walks, make a POST request to the corresponding endpoint. <br>
+Autentication is not currently needed for geting users, dogs and walks, but will be implemented in the future <br>
+
+If an ID is passed as an argument in the endponint, a specific [dog|user|walk] will be returned<br>
+Otherwise, an array of all the elements in the database will be returned. Only non-sensible data will be returned in the body of the request. 
+</p> <br>
+
+<p> Single object returned</p> <br>
+```
+GET : https://walk-my-dog.herokuapp.com/v1/dogs/614ed8c236d2a1849c05e589
+```
+<p> multiple object returned</p> <br>
+```
+GET : https://walk-my-dog.herokuapp.com/v1/dogs
 ```
