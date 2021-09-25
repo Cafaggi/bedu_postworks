@@ -7,7 +7,7 @@ const WalkSchema = new mongoose.Schema({
 },{timestamps: true, collection:'Dogs'})
 
 
-DogSchema.methods.publicData = () => {
+WalkSchema.methods.publicData = () => {
 	return {
 	    idDog: this.idDog,
 	    playtime: this.playtime,
