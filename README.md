@@ -40,18 +40,20 @@ The API supports sessions for users to authenticate and to modify all objects.
 
 <!-- USER CASES -->
 <h3 id="user-cases"> ➡️ 1.2 User cases</h3> 
-There are different user cases:
 
-The owner wants to registered himself and remove his account if it's necessary.
+ <b>There are different user cases:</b>
+
+The owner wants to registered himself and remove his account if it's necessary. <br>
 <img src="https://user-images.githubusercontent.com/82551324/134827512-a6a4eb8b-1ec1-4690-9be1-626f13e00853.png" alt="user1" width="500px"> <br><br>
   
-The owner wants to register his dog for being walked. The user can add information and edit it.
+The owner wants to register his dog for being walked.
+The user can add information and edit it. <br>
 <img src="https://user-images.githubusercontent.com/82551324/134827741-93688490-81dd-48e8-96fc-6133f3032abc.png" alt="user2" width="500px"> <br><br>
 
-The owner wants add dog walks and set the date and time and edit it.
-<img src="https://user-images.githubusercontent.com/82551324/134827759-160eb4ff-f3f0-4518-870a-f500979a5e25.png" alt="user3" width="500px"> <br>
+The owner wants add dog walks and set the date and time and edit it. <br>
+<img src="https://user-images.githubusercontent.com/82551324/134827759-160eb4ff-f3f0-4518-870a-f500979a5e25.png" alt="user3" width="500px"> <br><br>
 
-<br>The walker wants to register himself, remove his account and check the walks.
+The walker wants to register himself, remove his account and check the walks. <br>
 <img src="https://user-images.githubusercontent.com/82551324/134827775-27cb1695-e35d-4791-9302-01c2a0c98963.png" alt="user4" width="500px"> <br><br>
 
 
