@@ -33,6 +33,8 @@ function modifyWalk(req, res, next){
 			walk.playtime = newInfo.playtime
 		if (typeof newInfo.datetime !== 'undefined')
         	walk.datetime = newInfo.datetime
+		if (typeof newInfo.idWalker !== 'undefined')
+        	walk.idWalker = newInfo.idWalker
         walk.save()
         .then(updated => {                                   
         res.status(201).json(updated.publicData())})

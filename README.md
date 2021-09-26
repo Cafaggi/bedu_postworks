@@ -59,6 +59,8 @@ $ npm run dev
 <!-- Documentation -->
 <h2 id="Documentation"> :pencil:  3. Documentation</h2>
 
+<h3 id="Swagger" href="https://app.swaggerhub.com/apis-docs/Cafaggi/walk-my-dog/1#/" > SWAGGER HERE <-- </h3>
+
 <h3 id="POST">  3.1 POST</h3>
 
 ```
@@ -100,7 +102,7 @@ As a response you will receive a jason with the username, email and tolken. This
   }
 ```
 
-<h4 id="users"> :dog: 3.1.2 Dogs</h4>
+<h4 id="dogs"> :dog: 3.1.2 Dogs</h4>
 
 <p align="justify"> 
 The dogs request must contain a name, size ("Small| Medium | Large"), optional url of a picture, descriprion of the dog, a id of the owner and a location in which the dog wil be received for the walk in order to get posted
@@ -147,7 +149,8 @@ The walk request must contain a name, playtime ("1h | 2h | 3h"), an a datetime i
 {
     "idDog": "ObjectID as a string",
     "playtime": "string",
-    "datetime": "string"
+    "datetime": "string",
+    "walkerID": "ObjectID as a string"
 }
 
 ```
