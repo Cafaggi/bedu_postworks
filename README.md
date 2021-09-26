@@ -59,7 +59,7 @@ $ npm run dev
 <!-- Documentation -->
 <h2 id="Documentation"> :pencil:  3. Documentation</h2>
 
-<h3 id="Swagger" href="https://app.swaggerhub.com/apis-docs/Cafaggi/walk-my-dog/1#/" > SWAGGER HERE <-- </h3>
+<a id="Swagger" href="https://app.swaggerhub.com/apis-docs/Cafaggi/walk-my-dog/1#/" > SWAGGER HERE <-- </a>
 
 <h3 id="POST">  3.1 POST</h3>
 
