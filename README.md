@@ -37,7 +37,7 @@ $ npm install
 ```
 
 <p align="justify"> 
-Setup environment variables
+Set up environment variables
 </p>
 
 ```
@@ -67,7 +67,7 @@ POST : https://walk-my-dog.herokuapp.com/v1/[dogs|users|walks]
 ```
 <p align="justify"> 
 To create users, dogs, or walks, make a POST request to the corresponding endpoint. <br>
-Autentication is not currently needed for creating users, dogs and walks <br>
+Authentication is not currently needed for creating users, dogs and walks <br>
 The fields required for each model are the folowing:
 </p>
  
@@ -84,27 +84,27 @@ The users request must contain an unique username, name, lastname, password and 
 "lastname": "string", 
 "email": "string", 
 "type": "string",
-"password": "sting
+"password": "string"
 }
 
 ```
 
 <p align="justify"> 
-As a response you will receive a jason with the username, email and tolken. This tolken is required for autentication to get information of users. 
+As a response you will receive a json with the username, email and token. This token is required for authentication to get information of users. 
 </p>
 
 ```json
 {
     "username": "xxx",
     "email": "xxx@xxx.com",
-    "token": "exxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    "token": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   }
 ```
 
 <h4 id="dogs"> :dog: 3.1.2 Dogs</h4>
 
 <p align="justify"> 
-The dogs request must contain a name, size ("Small| Medium | Large"), optional url of a picture, descriprion of the dog, a id of the owner and a location in which the dog wil be received for the walk in order to get posted
+The dogs request must contain a name, size ("Small| Medium | Large"), optional url of a picture, description of the dog, an id of the owner and a location in which the dog will be picked up for the walk in order to get posted.
 </p>
 
 ```json
@@ -120,7 +120,7 @@ The dogs request must contain a name, size ("Small| Medium | Large"), optional u
 ```
 
 <p align="justify"> 
-As a response you will receive a jason with the following data
+As a response you will receive a json with the following data:
 </p>
 
 ```json
@@ -129,7 +129,7 @@ As a response you will receive a jason with the following data
     "name": "xxxx",
     "size": "xxxx",
     "pictures": "xxxx",
-    "description": "xxx xxxx",
+    "description": "xxxxxxx",
     "owner": "xxxxxxxxxxxx",
     "location": "xxxxxx",
     "createdAt": "xxxxxxxxx",
@@ -141,7 +141,7 @@ As a response you will receive a jason with the following data
 <h4 id="walks"> :service_dog: 3.1.3 Walks</h4>
 
 <p align="justify"> 
-The walk request must contain a name, playtime ("1h | 2h | 3h"), an a datetime in which the dog wil be received for the walk in order to get posted.
+The walk request must contain a name, playtime ("1h | 2h | 3h"), an a datetime at which the dog will be picked up for the walk in order to get posted.
 </p>
 
 ```json
@@ -155,7 +155,7 @@ The walk request must contain a name, playtime ("1h | 2h | 3h"), an a datetime i
 ```
 
 <p align="justify"> 
-As a response you will receive a jason with the following data
+As a response you will receive a json with the following data
 </p>
 
 ```json
@@ -178,9 +178,9 @@ GET : https://walk-my-dog.herokuapp.com/v1/[dogs|users|walks]
 ```
 <p align="justify"> 
 To get users, dogs, or walks, make a GET request to the corresponding endpoint. <br>
-Autentication is needed for geting users <br>
+Authentication is needed for getting users information. <br>
 
-If an ID is passed as an argument in the endponint, a specific [dog|user|walk] will be returned<br>
+If an ID is specified as an argument in the endpoint, the specific [dog|user|walk] whom this id belongs will be returned.<br>
 Otherwise, an array of all the elements in the database will be returned. Only non-sensible data will be returned in the body of the request. 
 </p> <br>
 
@@ -195,7 +195,7 @@ GET : https://walk-my-dog.herokuapp.com/v1/dogs/614ed8c236d2a1849c05e589
 ```
 GET : https://walk-my-dog.herokuapp.com/v1/dogs
 ```
-<p> autentication for GET users</p> <br>
+<p> authentication for GET users</p> <br>
 
 ```json
 {
@@ -215,7 +215,7 @@ PUT : https://walk-my-dog.herokuapp.com/v1/[dogs|users|walks]
 ```
 <p align="justify"> 
 To modify users, dogs, or walks, make a PUT request to the corresponding endpoint. <br>
-Autentication is needed for modify users <br>
+Authentication is needed for modify users <br>
 
 If an ID is required to modify an object, refer to post section for information about the elements and validation in each object. 
 </p> <br>
