@@ -1,5 +1,8 @@
+<p align="center"> 
+  <img src="https://user-images.githubusercontent.com/82551324/134824987-08612b67-c1a7-4729-9b0f-d969aac24828.png" alt="walkLogo" width="400px">
+</p>
+
 <h1 align="center"> Walk my dog </h1>
-<h3 align="center"> Walk my dog Webpage </h3>
 
 <!-- TABLE OF CONTENTS -->
 <h2 id="table-of-contents"> :book: Table of Contents</h2>
@@ -18,15 +21,31 @@
 <h2 id="about-the-project"> :pencil:  1. About The Project</h2>
 
 <p align="justify"> 
-This is our dog walk API, developed as a project for the Web Development course at BEDU. This API aims for a control system for dog walk requests.
-<br>There are three models in the code: Users, walks, and dogs. This model represents the operation where owners(Users) request a walk(Walk) to walkers(Users) for their dogs(Dogs).<br>
-Each model has enough information to select a walker, dog, place, time, and duration of the walk for each incidence.<br>
+This is our dog walk API, developed as a project for the Web Development course at BEDU.
+
+This API aims for a control system for dog walk requests.
+
+<h3 id="user-cases"> ➡️ 1.1 Models</h3>
+ 
+<b>There are three models in the code:</b>
+  
+| Owners(Users) | Walkers(Users) | Dogs |
+| :---------: | :---------: | :---------: |  
+| <img src="https://user-images.githubusercontent.com/82551324/134824854-283719c1-70e1-4a01-ae24-baac49515248.png" alt="owner" height="60px">  |   <img src="https://user-images.githubusercontent.com/82551324/134825320-249291d6-ace7-4372-be4c-d0a8f6696f42.png" alt="owner" height="60px">  |   <img src="https://user-images.githubusercontent.com/82551324/134825039-181d2e08-aa85-4948-82f3-add513f7c540.png" alt="owner" height="60px">  |
+| Ask for a walk | Accept a dog walk | Can be walked by Walkers |
+  
+This model represents the operation where <b>owners</b>(Users) request a <b>walk</b>(Walk) to <b>walkers</b>(Users) for their <b>dogs</b>(Dogs). <br>
+Each model has enough information to select a walker, dog, place, time, and duration of the walk for each incidence.<br>  
+The API supports sessions for users to authenticate and to modify all objects.
+
+<!-- USER CASES -->
+<h2 id="user-cases"> ➡️ 1.2 User cases</h2> 
 The API supports sessions for users to authenticate and to modify all objects.
 </p><br>
   
 
 <!-- RUN SEVER -->
-<h2 id="run-sever"> :computer:  2. How to run the server for development</h2>
+<h2 id="run-server"> :computer:  2. How to run the server for development</h2>
 
 <p align="justify"> 
 Install the dependencies
@@ -56,7 +75,7 @@ $ npm run dev
 ```
 
 <!-- Documentation -->
-<h2 id="Documentation"> :pencil:  3. Documentation</h2>
+<h2 id="documentation"> :pencil:  3. Documentation</h2>
 
 <a id="Swagger" href="https://app.swaggerhub.com/apis-docs/Cafaggi/walk-my-dog/1#/" > SWAGGER HERE <-- </a>
 
@@ -79,12 +98,12 @@ The users request must contain an unique username, name, lastname, password and 
 
 ```json
 {
-"username": "string",  
-"name": "string",   
-"lastname": "string", 
-"email": "string", 
-"type": "string",
-"password": "string"
+ "username": "string",  
+ "name": "string",   
+ "lastname": "string", 
+ "email": "string", 
+ "type": "string",
+ "password": "string"
 }
 
 ```
@@ -95,10 +114,10 @@ As a response you will receive a json with the username, email and token. This t
 
 ```json
 {
-    "username": "xxx",
-    "email": "xxx@xxx.com",
-    "token": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  }
+ "username": "xxx",
+ "email": "xxx@xxx.com",
+ "token": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+}
 ```
 
 <h4 id="dogs"> :dog: 3.1.2 Dogs</h4>
@@ -109,12 +128,12 @@ The dogs request must contain a name, size ("Small| Medium | Large"), optional u
 
 ```json
 {
-    "name": "string",
-    "size": "string",
-    "pictures": "string",
-    "description": "string",
-    "owner": "ObjectID as a string",
-    "location": "string"
+ "name": "string",
+ "size": "string",
+ "pictures": "string",
+ "description": "string",
+ "owner": "ObjectID as a string",
+ "location": "string"
 }
 
 ```
@@ -125,17 +144,17 @@ As a response you will receive a json with the following data:
 
 ```json
 {
-    "_id": "xxxx",
-    "name": "xxxx",
-    "size": "xxxx",
-    "pictures": "xxxx",
-    "description": "xxxxxxx",
-    "owner": "xxxxxxxxxxxx",
-    "location": "xxxxxx",
-    "createdAt": "xxxxxxxxx",
-    "updatedAt": "xxxxxxxxx",
-    "__v": "xx"
-  }
+ "_id": "xxxx",
+ "name": "xxxx",
+ "size": "xxxx",
+ "pictures": "xxxx",
+ "description": "xxxxxxx",
+ "owner": "xxxxxxxxxxxx",
+ "location": "xxxxxx",
+ "createdAt": "xxxxxxxxx",
+ "updatedAt": "xxxxxxxxx",
+ "__v": "xx"
+}
 ```
 
 <h4 id="walks"> :service_dog: 3.1.3 Walks</h4>
@@ -146,10 +165,10 @@ The walk request must contain a name, playtime ("1h | 2h | 3h"), an a datetime a
 
 ```json
 {
-    "idDog": "ObjectID as a string",
-    "playtime": "string",
-    "datetime": "string",
-    "walkerID": "ObjectID as a string"
+ "idDog": "ObjectID as a string",
+ "playtime": "string",
+ "datetime": "string",
+ "walkerID": "ObjectID as a string"
 }
 
 ```
@@ -160,14 +179,14 @@ As a response you will receive a json with the following data
 
 ```json
 {
-    "_id": "xxxxxxxxx",
-    "idDog": "xxxxxxxxxxxxxx",
-    "playtime": "xxxx",
-    "datetime": "xxxxxxxx",
-    "createdAt": "xxxxxxxxxxxxxxx",
-    "updatedAt": "xxxxxxxxxxxxxxxxxxx",
-    "__v": 0
-  }
+ "_id": "xxxxxxxxx",
+ "idDog": "xxxxxxxxxxxxxx",
+ "playtime": "xxxx",
+ "datetime": "xxxxxxxx",
+ "createdAt": "xxxxxxxxxxxxxxx",
+ "updatedAt": "xxxxxxxxxxxxxxxxxxx",
+ "__v": 0
+}
 ```
 
 
@@ -199,8 +218,8 @@ GET : https://walk-my-dog.herokuapp.com/v1/dogs
 
 ```json
 {
-"token" : "XXXXXXXXX",
-"prefix" : "Bearer"
+ "token" : "XXXXXXXXX",
+ "prefix" : "Bearer"
 }
 ```
 
