@@ -67,6 +67,7 @@ function logIn(req, res, next){
 			if (err){ return next(err)}
 			if (user) {
 				user.token = user.generateJWT();
+				return res.status(200).json(user.toAuthJSON())
 			} else {
 				return res.status(422).json(info);
 			}

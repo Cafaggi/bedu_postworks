@@ -11,14 +11,25 @@ function createDog(req, res, next){
 }
 
 function getDog(req, res, next){
+	var lim = req.query.lim
+	console.log (typeof lim)
 	if (req.params.id){
 		Dog.findById(req.params.id)
 		.then(mas => {res.send(mas)})
 		.catch(next)
 	} else {
-		Dog.find()
-		.then(dogs => {res.send(dogs)})
-		.catch(next)
+		if(typeof lim === "undefined"){
+			Dog.find()
+			.then(dogs => {res.send(dogs)})
+			.catch(next)
+		} else {
+			Dog.aggregate([
+				{'$limit' : parseInt(lim)}
+			]).then(r => {
+				res.status(200).send(r)
+			})
+			.catch(next)
+		}
 	}
 }
 
@@ -53,11 +64,41 @@ function deleteDog(req, res,next){
 	.catch(next)
 }
 
+function filterFields(req, res, next){
+	var filters = req.query
+		Dog.aggregate([
+			{'$match' : filters}
+	]).then(r => {
+		res.status(200).send(r)
+	})
+	.catch(next)
+}
+
+function convertIntObj(obj) {
+	const res = {}
+	for (const key in obj) {
+	  res[key] = parseInt(obj[key]);;
+	}
+	return res;
+  }
+
+function activeFields(req, res, next){
+	var projection = convertIntObj(req.query)
+		Dog.aggregate([
+			{'$project' : projection}
+	]).then(r => {
+		res.status(200).send(r)
+	})
+	.catch(next)
+}
+
 module.exports = {
 	createDog,
 	getDog,
 	modifyDog,
 	deleteDog,
+	activeFields,
+	filterFields
 }
 
 
