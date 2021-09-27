@@ -91,7 +91,9 @@ $ npm run dev
 <!-- Documentation -->
 <h2 id="documentation"> :pencil:  3. Documentation</h2>
 
-<a id="Swagger" href="https://app.swaggerhub.com/apis-docs/Cafaggi/walk-my-dog/1#/" > SWAGGER HERE <-- </a>
+<a href="https://app.swaggerhub.com/apis-docs/Cafaggi/walk-my-dog/1#/">![swagger-5-1](https://user-images.githubusercontent.com/82551324/134828835-707ef220-97a1-450c-a197-1220f45e29af.png)</a> 
+
+
 
 <h3 id="POST">  3.1 POST</h3>
 
