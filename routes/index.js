@@ -1,7 +1,7 @@
 var router = require('express').Router();
 
 router.get('/', (req, res) => {
-	res.send('welcome to my api');
+	res.send('welcome to Walk-my-dog api');
 })
 
 router.use('/users', require('./users'));
